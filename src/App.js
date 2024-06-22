@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import { Routes, Route } from 'react-router-dom';
+//pages
+import AddItem from './pages/AddItem';
+import Checkout from './pages/Checkout';
+import Inventory from './pages/Inventory';
+import CheckIn from './pages/CheckIn';
+import Logs from './pages/Logs';
+import SingleItemInfo from './pages/ItemInfo';
+import SingleBarcode from './pages/SingleBarcode';
+//components
+import Navbar from './UI/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='dark:bg-slate-900'>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Inventory />} />
+        <Route path="/add-item" element={<AddItem />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/check-in" element={<CheckIn />} />
+        <Route path="/logs" element={<Logs />} />
+        <Route path="inventory/:id" element={<SingleItemInfo />} />
+        <Route path="inventory/:barcode" element={<SingleBarcode />} />
+      </Routes>
+
     </div>
   );
 }
