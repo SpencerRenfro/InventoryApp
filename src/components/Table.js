@@ -47,11 +47,10 @@ export default function Example({ inventory }) {
       <div className="mt-8 flow-root ">
         <div className="mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 ">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-            <div className="bg-purple-500 py-4 flex flex-col w-full">
+            <div className="bg-slate-900  dark:bg-slate-500  py-4 flex flex-col w-full">
               <div className="flex flex-col w-full ">
                 <div className="flex justify-between">
-                  <h2 className="pl-5 text-2xl">Inventory</h2>
-                  <h2 className="text-2xl">Filter</h2>
+                  <h2 className="pl-5 text-2xl text-white dark:text-black">Inventory</h2>
                   <div className="form-control pr-10">
                     <input
                       type="text"

@@ -27,6 +27,66 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "3873",
+      "name": "sssss",
+      "category": "",
+      "price": 0,
+      "description": "",
+      "barcode": "536437112570",
+      "barcodeCombinedName": "536437112570_sssss",
+      "itemCollection": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "3508",
+      "name": "zzz",
+      "category": "",
+      "price": 0,
+      "description": "",
+      "barcode": "258191312625",
+      "barcodeCombinedName": "258191312625_zzz",
+      "itemCollection": [
+        ""
+      ],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "080e",
+      "name": "s",
+      "category": "Education",
+      "price": null,
+      "description": "",
+      "barcode": "091566196058",
+      "barcodeCombinedName": "091566196058_s",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "5de5",
+      "name": "s",
+      "category": "Electronics",
+      "price": null,
+      "description": "",
+      "barcode": "802085359664",
+      "barcodeCombinedName": "802085359664_s",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "itemLogs": [
