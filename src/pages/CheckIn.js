@@ -1,7 +1,12 @@
 import React, {useState, useEffect} from "react";
-import ScanInput from '../components/ScanInput'
 
+//components
+import ScanInput from '../components/ScanInput';
+import ItemFoundCard from '../components/ItemFoundCard';
+
+//hooks
 import { useFindItem } from "../hooks/useFindItem";
+
 export default function CheckIn() {
   const [inputText, setInputText] = useState("");
   const [displayText, setDisplayText] = useState("");
@@ -40,25 +45,18 @@ export default function CheckIn() {
       </form>
       <div className="pt-20">
       {displayText && <p>You entered: {displayText}</p>}
-      {/* {!itemFound && (
-        <div>
-          <h2>Item Found</h2>
-          <p>Name: Stero</p>
-          <div>
-          <button>Confirm</button>
-          <button>Cancel</button>
-          </div>
-        </div>
-      )} */}
+
 
       {isPending && <div>Loading...</div>}
       {error && <div>{error}</div>}
       {singleItem && (
         <article>
-          <h2>{singleItem.name}</h2>
-          <p>{singleItem.description}</p>
-          <p>{singleItem.category}</p>
-          <p>{singleItem.status}</p>
+          <ItemFoundCard
+            name={singleItem.name}
+            description={singleItem.description}
+            category={singleItem.category}
+            status={singleItem.status}
+          />
         </article>
       )}
 

@@ -22,11 +22,10 @@ function ScanInput(props) {
           onChange={props.handleChange}
           placeholder="Enter text"
         />
-        <button onClick={props.handleSubmit}>Submit</button>
+        <button className="btn mx-5 bg-slate-900 text-white" onClick={props.handleSubmit}>Search</button>
       </form>
       <div className="display-text">
         {props.isplayText && <p>You entered: {props.displayText}</p>}
-        <div>input text: {props.inputText}</div>
       </div>
     </div>
   );

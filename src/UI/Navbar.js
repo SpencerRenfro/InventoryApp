@@ -44,27 +44,27 @@ export default function Example() {
                     <NavLink
                         to="/"
                         className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
+                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
                         : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
                     >
                         Dashboard
                     </NavLink>
                     <NavLink to="add-item" className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
+                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
                         : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
                     >
                         Add-item
                     </NavLink>
                     <NavLink
                         to="/check-in" className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
+                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
                         : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')} >
                         Sign Item In
                     </NavLink>
                     <NavLink
                         to="/checkout"
                         className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
+                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
                         : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
                     >
                         Sign Item Out
@@ -72,7 +72,7 @@ export default function Example() {
                     <NavLink
                         to="/logs"
                         className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
+                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
                         : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
                     >
                         Logs

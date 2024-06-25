@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useFetch } from "./useFetch";
 
-export const useFindItem = (barcode) => {
+export const useFindItem = (barcode, isSubmitted) => {
 
     const [singleItem, setSingleItem] = useState(null);
     const [isPending, setIsPending] = useState(false);
@@ -22,7 +22,10 @@ export const useFindItem = (barcode) => {
                 setError(null);
             } else {
                 setIsPending(false);
-                setError("Item not found");
+                if(isSubmitted && !foundItem){
+                    setError("Item not found");
+                }
+
             }
         }
     }, [barcode, data]);
