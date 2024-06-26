@@ -7,17 +7,22 @@ function FilterModal(props) {
   const filterCheckboxRef = useRef(null);
   const filterSelectionRef = useRef(null);
   useEffect(() => {
-    if(filterCheckboxRef.current.checked && props.filter !== "") {
-        console.log('box is checked and filter is not empty')
+    if (filterCheckboxRef.current.checked && props.filter !== "") {
+      console.log("box is checked and filter is not empty");
       filterCheckboxRef.current.checked = false;
     }
-    if(filterCheckboxRef.current.checked){
-        console.log('box is not checked')
-        props.setFilter(filterSelectionRef.current.value);
-        props.setFilter("");
-
+    if (filterCheckboxRef.current.checked) {
+      console.log("box is not checked");
+      props.setFilter(filterSelectionRef.current.value);
+      props.setFilter("");
     }
-  }, [props.filter, props, filterCheckboxRef, filterSelectionRef, props.setFilter]);
+  }, [
+    props.filter,
+    props,
+    filterCheckboxRef,
+    filterSelectionRef,
+    props.setFilter,
+  ]);
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-xl">
@@ -25,7 +30,10 @@ function FilterModal(props) {
           <div>
             <label className="card-title">
               <h2>Filter Category</h2>
-              <select onChange={(e) => props.setFilter(e.target.value)} ref={filterSelectionRef}>
+              <select
+                onChange={(e) => props.setFilter(e.target.value)}
+                ref={filterSelectionRef}
+              >
                 <option value="Art_Supplies">Art Supplies</option>
                 <option value="Education">Education</option>
                 <option value="Electronics">Electronics</option>
@@ -37,14 +45,21 @@ function FilterModal(props) {
           </div>
           <div>
             <label>
-                <h2>No filter</h2>
-              <input ref={filterCheckboxRef} type="checkbox" defaultChecked className="checkbox" value={props.filter} onClick={(e) => {
-                    if(e.target.checked){
-                        props.setFilter("");
-                    } else if(!e.target.checked){
-                        props.setFilter(filterSelectionRef.current.value);
-                    }
-              }} />
+              <h2>No filter</h2>
+              <input
+                ref={filterCheckboxRef}
+                type="checkbox"
+                defaultChecked
+                className="checkbox"
+                value={props.filter}
+                onClick={(e) => {
+                  if (e.target.checked) {
+                    props.setFilter("");
+                  } else if (!e.target.checked) {
+                    props.setFilter(filterSelectionRef.current.value);
+                  }
+                }}
+              />
               {/* if props.filter = "" then all categories are shown in inventory table */}
             </label>
           </div>
