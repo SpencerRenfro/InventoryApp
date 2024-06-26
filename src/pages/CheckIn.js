@@ -4,6 +4,9 @@ import React, {useState, useEffect} from "react";
 import ScanInput from '../components/ScanInput';
 import ItemFoundCard from '../components/ItemFoundCard';
 
+//modal code TESTING
+import Modal from '../UI/modal/Modal';
+
 //hooks
 import { useFindItem } from "../hooks/useFindItem";
 
@@ -30,7 +33,7 @@ export default function CheckIn() {
 
 
   return (
-    <div className="flex flex-col items-center align-items-center border pt-20">
+    <div className="flex flex-col items-center align-items-center  pt-20">
       <form>
         <label>Enter Barcode:</label>
         <ScanInput

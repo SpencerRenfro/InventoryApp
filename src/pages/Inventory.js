@@ -5,7 +5,7 @@ import { useFetch } from "../hooks/useFetch";
 //components
 import InventorySkeleton from "../components/skeleton/InventorySkeleton";
 
-function Inventory() {
+function Inventory(props) {
   const { data, isPending, error } = useFetch("http://localhost:8000/inventory");
   //running json server on port 8000 json-server --host localhost --port 8000 './Data/db.json'
   return (
@@ -13,7 +13,7 @@ function Inventory() {
 
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {data && <div><Table inventory={data} /> </div>}
+      {data && <div><Table inventory={data} setShowModal={props.setShowModal}  categoryFilter={props.categoryFilter}/> </div>}
       {!data && !isPending && <InventorySkeleton />}
       {/* <InventorySkeleton /> */}
     </div>

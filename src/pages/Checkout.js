@@ -8,10 +8,15 @@ import ScanInput from "../components/ScanInput";
 import DateSelection from "../components/DateSelection";
 import ItemFoundCard from "../components/ItemFoundCard";
 
+//DatePicker
+// import DatePicker from 'react-datepicker';
+// import 'react-datepicker/dist/react-datepicker.css';
+
 //hooks
 import { useFindItem } from "../hooks/useFindItem";
 
 function Checkout() {
+  const [startDate, setStartDate] = useState(new Date());
   const [inputText, setInputText] = useState("");
   const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -62,7 +67,8 @@ function Checkout() {
               <label>
                 <h2 className="font-bold dark:text-white">Today's Date</h2>
               </label>
-              <DateSelection />
+              {/* <DateSelection /> */}
+              {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
             </div>
             <div>
               <label>

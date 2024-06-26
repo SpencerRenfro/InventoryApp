@@ -4,24 +4,43 @@ import { useFetch } from "../hooks/useFetch";
 import { useBarcodeGenerator } from "../hooks/useBarcodeGenerator";
 import { useNavigate } from "react-router-dom";
 
+//Modal Test code importing successfully created page to render
+// import CreationSuccessful from "./CRUD pages/CreationSuccessful";
+
 //images
 import cube from "../assets/icons/cube.svg";
 import deleteIcon from "../assets/icons/delete.svg";
 
 export default function AddItem() {
+  const [customCategory, setCustomCategory] = useState(false);
   const [tempItem, setTempItem] = useState(""); // Changed
   const [barcodeState, setBarcodeState] = useState();
   const navigate = useNavigate();
 
-  const { postData, data, error } = useFetch(
-    "http://localhost:8000/inventory",
-    "POST"
-  );
+  // const { postData, data, error } = useFetch(
+  //   "http://localhost:8000/inventory",
+  //   "POST"
+  // );
+
+
+  const {
+    postData: postInventoryData,
+    data: inventoryData,
+    error: inventoryError,
+  } = useFetch("http://localhost:8000/inventory", "POST");
+
+  const {
+    postData: postLogsData,
+    data: logsData,
+    error: logsError,
+  } = useFetch("http://localhost:8000/itemLogs", "POST");
 
   const [formData, setFormData] = useState({
+    date: "",
     name: "",
     category: "",
     price: 0.0,
+    serialNumber: "",
     description: "",
     barcode: "",
     barcodeCombinedName: "",
@@ -31,6 +50,14 @@ export default function AddItem() {
     status: "IN",
   });
 
+  const [logsDataForm, setLogsDataForm] = useState({
+    name: "",
+    action: "CREATED",
+    date: "",
+    barcode: "",
+    id: "",
+  });
+
   const { canvasRef, barcode, barcodeObject } = useBarcodeGenerator(
     formData.name,
     setBarcodeState
@@ -38,11 +65,16 @@ export default function AddItem() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData(formData);
+    postInventoryData(formData);
+    postLogsData(logsDataForm);
   };
 
+  const handleCategory = (e) => {
+    setCustomCategory(!customCategory);
+  }
+
   const addTempItem = () => {
-    if(tempItem.trim() === ""){
+    if (tempItem.trim() === "") {
       return;
     }
     setFormData({
@@ -62,18 +94,42 @@ export default function AddItem() {
   };
 
   useEffect(() => {
+    let today = new Date().toLocaleDateString(undefined, {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
     setFormData({
       ...formData,
+      date: today,
       barcode: barcodeState,
       barcodeCombinedName: barcodeState + "_" + formData.name,
+    });
+    setLogsDataForm({
+      ...logsDataForm,
+      name: formData.name,
+      barcode: barcodeState,
+      id: formData.barcodeCombinedName,
+      date: today,
     });
   }, [formData.name, barcodeState]);
 
   useEffect(() => {
-    if (data) {
-      navigate("/");
+    if (inventoryData && logsData) {
+      navigate("/item-creation-successful");
+      // navigate("/");
+      // return <CreationSuccessful inventoryData={inventoryData} logsData={logsData} />;
     }
-  }, [data]);
+    if (logsError || inventoryError) {
+      console.log("Error creating item.");
+      console.log("Inventory Error:", inventoryError);
+      console.log("Logs Error:", logsError);
+      navigate("/item-creation-failure");
+    }
+  }, [inventoryData, logsData]);
 
   return (
     <div className="w-full flex justify-center">
@@ -112,14 +168,17 @@ export default function AddItem() {
                 required
               />
             </label>
-            <div className="w-2/3">
+            { customCategory === true ? (
+              <div className="w-2/3">
               <label htmlFor="location" className="font-bold dark:text-white">
-                Category
+                <div className="flex">
+                  <h2>Category</h2>
+                </div>
               </label>
               <select
                 id="location"
                 name="location"
-                className="text-white active:bg-purple-500 dark:hover:bg-purple-500 dark:focus:ring-purple-500 dark:focus:border-purple-500 bg-purple-500 w-full rounded-xl focus:ring-slate-900 focus:border-slate-900 dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                className="text-white active:bg-purple-500 dark:hover:bg-purple-500   bg-purple-500 w-full rounded-xl focus:ring-slate-900 focus:border-slate-900 dark:focus:ring-purple-500 dark:focus:border-purple-500"
                 defaultValue="other"
                 value={formData.category}
                 onChange={(e) =>
@@ -127,14 +186,39 @@ export default function AddItem() {
                 }
                 required
               >
-                <option value="Art_Supplies" className="dark:hover:bg-purple-500 dark:focus:ring-purple-500 dark:focus:border-purple-500">Art Supplies</option>
-                <option value="Education" className="hover:bg-red-500">Education</option>
+                <option
+                  value="Art_Supplies"
+                  className="dark:hover:bg-purple-500 dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                >
+                  Art Supplies
+                </option>
+                <option value="Education" className="hover:bg-red-500">
+                  Education
+                </option>
                 <option value="Electronics">Electronics</option>
                 <option value="Tools">Tools</option>
                 <option value="Transport">Transport</option>
                 <option value="Other">Other</option>
+                <option>Add Category</option>
               </select>
             </div>
+              ) : (
+                <label className="w-2/3">
+              <h2 className="font-bold  dark:text-white ">Custom Category</h2>
+              <input
+                className="w-full rounded-xl dark:text-white dark:bg-purple-500 dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
+                type="text"
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    category: e.target.value,
+                  })
+                }
+                required
+              />
+            </label>
+              )
+            }
             <label className="w-2/3">
               <h2 className="font-bold  dark:text-white ">Item Price</h2>
               <input
@@ -144,6 +228,20 @@ export default function AddItem() {
                   setFormData({
                     ...formData,
                     price: parseFloat(e.target.value),
+                  })
+                }
+                required
+              />
+            </label>
+            <label className="w-2/3">
+              <h2 className="font-bold  dark:text-white ">Serial Number</h2>
+              <input
+                className="w-full rounded-xl dark:text-white dark:bg-purple-500 dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
+                type="text"
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    serialNumber: e.target.value,
                   })
                 }
                 required
@@ -175,9 +273,13 @@ export default function AddItem() {
                   onChange={(e) => setTempItem(e.target.value)}
                 />
                 <div className="w-full flex justify-end  pt-2">
-                <button className="btn bg-slate-900 text-white dark:text-white " type="button" onClick={addTempItem}>
-                  Add
-                </button>
+                  <button
+                    className="btn bg-slate-900 text-white dark:text-white "
+                    type="button"
+                    onClick={addTempItem}
+                  >
+                    Add
+                  </button>
                 </div>
                 {formData.itemCollection.length > 0 && (
                   <ul className="py-4">
@@ -200,14 +302,25 @@ export default function AddItem() {
               </div>
             </label>
             <div>
-
               <canvas
-               style={{ display: formData.name ? 'block' : 'none' }}
-              id={formData.name}></canvas>
+                style={{ display: formData.name ? "block" : "none" }}
+                id={formData.name}
+              ></canvas>
             </div>
-            <button type="submit" className="btn bg-purple-500 dark:hover:bg-purple-400 text-white  my-5">
+            <div className="flex justify-between  w-full  items-center">
+              <button
+                type="submit"
+                className="btn bg-purple-500 dark:hover:bg-purple-400 text-white  my-5"
+              >
                 Submit
-            </button>
+              </button>
+              <div className="flex gap-5">
+              <label>
+                <h2>Add Custom Category</h2>
+              </label>
+              <input type="checkbox" defaultChecked className="checkbox" onClick={handleCategory} />
+              </div>
+            </div>
           </div>
         </form>
       </div>

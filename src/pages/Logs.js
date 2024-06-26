@@ -4,7 +4,7 @@ import LogTable from '../components/LogTable'
 function Logs() {
   return (
     <div>
-      <LogTable />
+      {/* <LogTable /> */}
     </div>
   )
 }
