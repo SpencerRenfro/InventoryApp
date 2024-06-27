@@ -22,7 +22,6 @@ export default function AddItem() {
   //   "POST"
   // );
 
-
   const {
     postData: postInventoryData,
     data: inventoryData,
@@ -71,7 +70,7 @@ export default function AddItem() {
 
   const handleCategory = (e) => {
     setCustomCategory(!customCategory);
-  }
+  };
 
   const addTempItem = () => {
     if (tempItem.trim() === "") {
@@ -168,57 +167,56 @@ export default function AddItem() {
                 required
               />
             </label>
-            { customCategory === true ? (
+            {customCategory === true ? (
               <div className="w-2/3">
-              <label htmlFor="location" className="font-bold dark:text-white">
-                <div className="flex">
-                  <h2>Category</h2>
-                </div>
-              </label>
-              <select
-                id="location"
-                name="location"
-                className="text-white active:bg-purple-500 dark:hover:bg-purple-500   bg-purple-500 w-full rounded-xl focus:ring-slate-900 focus:border-slate-900 dark:focus:ring-purple-500 dark:focus:border-purple-500"
-                defaultValue="other"
-                value={formData.category}
-                onChange={(e) =>
-                  setFormData({ ...formData, category: e.target.value })
-                }
-                required
-              >
-                <option
-                  value="Art_Supplies"
-                  className="dark:hover:bg-purple-500 dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                <label htmlFor="location" className="font-bold dark:text-white">
+                  <div className="flex">
+                    <h2>Category</h2>
+                  </div>
+                </label>
+                <select
+                  id="location"
+                  name="location"
+                  className="text-white active:bg-purple-500 dark:hover:bg-purple-500   bg-purple-500 w-full rounded-xl focus:ring-slate-900 focus:border-slate-900 dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                  defaultValue="other"
+                  value={formData.category}
+                  onChange={(e) =>
+                    setFormData({ ...formData, category: e.target.value })
+                  }
+                  required
                 >
-                  Art Supplies
-                </option>
-                <option value="Education" className="hover:bg-red-500">
-                  Education
-                </option>
-                <option value="Electronics">Electronics</option>
-                <option value="Tools">Tools</option>
-                <option value="Transport">Transport</option>
-                <option value="Other">Other</option>
-                <option>Add Category</option>
-              </select>
-            </div>
-              ) : (
-                <label className="w-2/3">
-              <h2 className="font-bold  dark:text-white ">Custom Category</h2>
-              <input
-                className="w-full rounded-xl dark:text-white dark:bg-purple-500 dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
-                type="text"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    category: e.target.value,
-                  })
-                }
-                required
-              />
-            </label>
-              )
-            }
+                  <option
+                    value="Art_Supplies"
+                    className="dark:hover:bg-purple-500 dark:focus:ring-purple-500 dark:focus:border-purple-500"
+                  >
+                    Art Supplies
+                  </option>
+                  <option value="Education" className="hover:bg-red-500">
+                    Education
+                  </option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Tools">Tools</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Other">Other</option>
+                  <option>Add Category</option>
+                </select>
+              </div>
+            ) : (
+              <label className="w-2/3">
+                <h2 className="font-bold  dark:text-white ">Custom Category</h2>
+                <input
+                  className="w-full rounded-xl dark:text-white dark:bg-purple-500 dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
+                  type="text"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      category: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </label>
+            )}
             <label className="w-2/3">
               <h2 className="font-bold  dark:text-white ">Item Price</h2>
               <input
@@ -315,10 +313,15 @@ export default function AddItem() {
                 Submit
               </button>
               <div className="flex gap-5">
-              <label>
-                <h2>Add Custom Category</h2>
-              </label>
-              <input type="checkbox" defaultChecked className="checkbox" onClick={handleCategory} />
+                <label>
+                  <h2>Add Custom Category</h2>
+                </label>
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  className="checkbox"
+                  onClick={handleCategory}
+                />
               </div>
             </div>
           </div>

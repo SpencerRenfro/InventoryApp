@@ -313,6 +313,21 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "72bf",
+      "date": "06/26/2024, 11:44:31 PM",
+      "name": "fds",
+      "category": "",
+      "price": null,
+      "serialNumber": "dsd",
+      "description": "ds",
+      "barcode": "153050163713",
+      "barcodeCombinedName": "153050163713_fds",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "itemLogs": [
@@ -404,6 +419,13 @@
       "action": "CREATED",
       "date": "06/26/2024, 01:44:25 AM",
       "barcode": "775814306493"
+    },
+    {
+      "id": "773543118771_fds",
+      "name": "fds",
+      "action": "CREATED",
+      "date": "06/26/2024, 11:44:31 PM",
+      "barcode": "153050163713"
     }
   ]
 }

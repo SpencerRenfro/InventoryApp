@@ -25,7 +25,7 @@ export default function Example({
     let total = 0;
     let checkedInCount = 0;
     let checkedOutCount = 0;
-    if(categoryFilter === ""){
+    if (categoryFilter === "") {
       inventory.forEach((item) => {
         if (!isNaN(parseFloat(item.price))) {
           total += parseFloat(item.price);
@@ -36,18 +36,20 @@ export default function Example({
           checkedOutCount++;
         }
       });
-    } else{
-        let filteredItems = inventory.filter((item) => item.category === categoryFilter);
-        filteredItems.forEach((item) => {
-          if (!isNaN(parseFloat(item.price))) {
-            total += parseFloat(item.price);
-          }
-          if (item.status === "IN") {
-            checkedInCount++;
-          } else if (item.status === "OUT") {
-            checkedOutCount++;
-          }
-        });
+    } else {
+      let filteredItems = inventory.filter(
+        (item) => item.category === categoryFilter
+      );
+      filteredItems.forEach((item) => {
+        if (!isNaN(parseFloat(item.price))) {
+          total += parseFloat(item.price);
+        }
+        if (item.status === "IN") {
+          checkedInCount++;
+        } else if (item.status === "OUT") {
+          checkedOutCount++;
+        }
+      });
     }
 
     setTotalAssetValue(total);
@@ -106,9 +108,19 @@ export default function Example({
                   Total Asset Value: ${totalAssetValue}
                 </p>
               </div>
+              {categoryFilter !== "" && (
+                <div className=" flex items-center">
+                <div className="flex">
+                  <p className="text-lg  mr-5 ">
+                    Filtering By:
+                  </p>
+                  <p className="text-lg border-b dark:border-b-purple-500">{categoryFilter}</p>
+                  </div>
+                </div>
+              )}
               <div className="">
                 <button onClick={setShowModal}>
-                <FilterIcon />
+                  <FilterIcon />
                 </button>
               </div>
             </div>

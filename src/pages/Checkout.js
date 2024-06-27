@@ -64,12 +64,43 @@ function Checkout() {
           <div className="flex flex-col w-full gap-5 items-start">
             <div className="w-full">
               <label>
-                <h2 className="font-bold dark:text-white">Today's Date</h2>
+                <h2 className="font-bold dark:text-white">Date</h2>
               </label>
-
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>First Name</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>Last Name</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>Phone Number</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>Email</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
               />
             </div>
             <div>
