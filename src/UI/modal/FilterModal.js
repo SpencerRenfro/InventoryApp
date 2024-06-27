@@ -48,6 +48,11 @@ function FilterModal(props) {
               {/* if props.filter = "" then all categories are shown in inventory table */}
             </label>
           </div>
+          <div className="w-full flex justify-end">
+            <button className="btn border-purple-500" onClick={props.onClose}>
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>

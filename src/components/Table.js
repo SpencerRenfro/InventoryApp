@@ -10,7 +10,7 @@ import educationIcon from "../assets/icons/education.svg";
 import toolIcon from "../assets/icons/power_tool.svg";
 import rawIcon from "../assets/icons/raw_material.svg";
 import other from "../assets/icons/other.svg";
-import filter from "../assets/icons/filter.svg";
+import FilterIcon from "../UI//icons/FilterIcon";
 
 export default function Example({
   inventory,
@@ -63,7 +63,7 @@ export default function Example({
             <div className="bg-slate-900  dark:bg-purple-500  py-4 flex flex-col w-full">
               <div className="flex flex-col w-full ">
                 <div className="grid grid-cols-12 lg:flex lg:flex-wrap lg:justify-between">
-                  <h2 className="pl-5 text-2xl text-white dark:text-black col-span-12">
+                  <h2 className="pl-5 text-5xl font-bold text-white dark:text-black col-span-12">
                     Inventory
                   </h2>
                   <div className="form-control pr-10 m-2 w-72">
@@ -108,7 +108,7 @@ export default function Example({
               </div>
               <div className="">
                 <button onClick={setShowModal}>
-                  <img src={filter} alt="filter" width="70px" />
+                <FilterIcon />
                 </button>
               </div>
             </div>

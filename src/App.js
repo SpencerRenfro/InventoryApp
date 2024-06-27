@@ -45,7 +45,7 @@ function App() {
       </Routes>
       {showModal && (
         <Modal onClose={modalHandler}>
-          <FilterModal setFilter={setFilter} filter={filter}/>
+          <FilterModal setFilter={setFilter} filter={filter}  onClose={modalHandler}/>
         </Modal>)}
     </div>
   );
