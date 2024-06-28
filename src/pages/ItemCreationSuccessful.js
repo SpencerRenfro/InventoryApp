@@ -1,14 +1,10 @@
 import React from "react";
 import Modal from "../ui/modal/Modal";
-import CreationSuccessful from "./crud_pages/CreationSuccessful";
 import checkmarkPlain from "../assets/icons/checkmarkPlain.svg";
 
-function ItemCreationSuccessful(props) {
+function ItemCreationSuccessful() {
   return (
     <div className="w-full flex justify-center mt-20 ">
-      <div>
-        <CreationSuccessful />
-      </div>
       <div
         className="w-1/4 grid grid-cols-12 justify-items-center dark:bg-slate-700 rounded-lg shadow-xl "
         style={{ height: "600px" }}
@@ -21,13 +17,13 @@ function ItemCreationSuccessful(props) {
         <div className="col-span-12 justify-items-center mt-10">
           <img
             src={checkmarkPlain}
-            width="150px"
-            className="border align-middel border-green-500 rounded-full bg-green-300 p-5"
+            width="175px"
+            className="border-green-500 rounded-full bg-green-300 p-5"
             alt="checkmark"
           />
         </div>
         <div className="col-span-12 justify-items-center">
-          <Modal onClose={props.onClose} />
+          <Modal />
         </div>
       </div>
     </div>

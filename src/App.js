@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
 //pages
@@ -15,18 +15,16 @@ import ItemCreationSuccessful from "./pages/ItemCreationSuccessful";
 import Navbar from "./ui/Navbar";
 import Modal from "./ui/modal/Modal";
 import FilterModal from "./ui/modal/FilterModal";
+import StatisticsModal from "./ui/modal/StatisticsModal";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(true);
+  const [showStatisticsModal, setShowStatisticsModal] = useState(false);
   const [filter, setFilter] = useState("");
   const modalHandler = () => {
     setShowModal(!showModal);
   };
-
-  useEffect(() => {
-    console.log("filter changed");
-    console.log("filter: ", filter);
-  }, [filter]);
 
   return (
     <div className="dark:bg-slate-900 min-h-screen ">
@@ -70,10 +68,12 @@ function App() {
             />
           )}
           {showStatisticsModal && (
-            <StatisticsModal onClose={() => {
-              setShowStatisticsModal(false)
-              setShowModal(false)
-            }} />
+            <StatisticsModal
+              onClose={() => {
+                setShowStatisticsModal(false);
+                setShowModal(false);
+              }}
+            />
           )}
         </Modal>
       )}
