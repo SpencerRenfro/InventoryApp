@@ -328,6 +328,177 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "96a2",
+      "date": "06/27/2024, 12:14:21 AM",
+      "name": "pen",
+      "category": "pens",
+      "price": 12,
+      "serialNumber": "3201",
+      "description": "black swan pen",
+      "barcode": "010550075893",
+      "barcodeCombinedName": "010550075893_pen",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "ca83",
+      "date": "06/27/2024, 03:37:33 AM",
+      "name": "ds",
+      "category": "dsds",
+      "price": null,
+      "serialNumber": "ds",
+      "description": "ds",
+      "barcode": "185018614172",
+      "barcodeCombinedName": "185018614172_ds",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "cb24",
+      "date": "06/27/2024, 03:39:16 AM",
+      "name": "coffe cup",
+      "category": "ceramics",
+      "price": 20,
+      "serialNumber": "21156",
+      "description": "Clay coffe cup",
+      "barcode": "268580706861",
+      "barcodeCombinedName": "268580706861_coffe cup",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "0d97",
+      "date": "06/27/2024, 03:41:42 AM",
+      "name": "new coffe cup",
+      "category": "coffe cup",
+      "price": 300,
+      "serialNumber": "1",
+      "description": "",
+      "barcode": "014243190796",
+      "barcodeCombinedName": "014243190796_new coffe cup",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "0ccf",
+      "date": "06/27/2024, 03:43:14 AM",
+      "name": "1",
+      "category": "1",
+      "price": 1,
+      "serialNumber": "1",
+      "description": "1",
+      "barcode": "339329754478",
+      "barcodeCombinedName": "339329754478_1",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "27f1",
+      "date": "06/27/2024, 03:44:06 AM",
+      "name": "ds",
+      "category": "dsds",
+      "price": null,
+      "serialNumber": "ds",
+      "description": "ds",
+      "barcode": "328082810911",
+      "barcodeCombinedName": "328082810911_ds",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "a659",
+      "date": "06/27/2024, 03:44:40 AM",
+      "name": "tea cup",
+      "category": "tea cup",
+      "price": 2,
+      "serialNumber": "N/A",
+      "description": "",
+      "barcode": "740544620564",
+      "barcodeCombinedName": "740544620564_tea cup",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    }
+  ],
+  "categories": [
+    {
+      "id": "Art_Supplies",
+      "name": "Art_Supplies"
+    },
+    {
+      "id": "Education",
+      "name": "Education"
+    },
+    {
+      "id": "Electronics",
+      "name": "Electronics"
+    },
+    {
+      "id": "Tools",
+      "name": "Tools"
+    },
+    {
+      "id": "Transport",
+      "name": "Transport"
+    },
+    {
+      "id": "Other",
+      "name": "other"
+    },
+    {
+      "id": "Raw_Materials",
+      "name": "Raw_Materials"
+    },
+    {
+      "id": "fdb7",
+      "name": "",
+      "barcode": "185018614172",
+      "barcodeCombinedName": "185018614172_ds"
+    },
+    {
+      "id": "df04",
+      "name": "ds",
+      "barcode": "268580706861",
+      "barcodeCombinedName": "268580706861_coffe cup"
+    },
+    {
+      "id": "1440",
+      "name": "",
+      "barcode": "014243190796",
+      "barcodeCombinedName": "014243190796_new coffe cup"
+    },
+    {
+      "id": "b268",
+      "name": "",
+      "barcode": "339329754478",
+      "barcodeCombinedName": "339329754478_1"
+    },
+    {
+      "id": "d836",
+      "name": "dsds",
+      "barcode": "328082810911",
+      "barcodeCombinedName": "328082810911_ds"
+    },
+    {
+      "id": "3572",
+      "name": "tea cup",
+      "barcode": "740544620564",
+      "barcodeCombinedName": "740544620564_tea cup"
     }
   ],
   "itemLogs": [
@@ -426,6 +597,55 @@
       "action": "CREATED",
       "date": "06/26/2024, 11:44:31 PM",
       "barcode": "153050163713"
+    },
+    {
+      "id": "484484737988_pen",
+      "name": "pen",
+      "action": "CREATED",
+      "date": "06/27/2024, 12:14:21 AM",
+      "barcode": "010550075893"
+    },
+    {
+      "id": "614781573155_ds",
+      "name": "ds",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:37:33 AM",
+      "barcode": "185018614172"
+    },
+    {
+      "id": "462685916565_coffe cup",
+      "name": "coffe cup",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:39:16 AM",
+      "barcode": "268580706861"
+    },
+    {
+      "id": "763802759488_new coffe cup",
+      "name": "new coffe cup",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:41:42 AM",
+      "barcode": "014243190796"
+    },
+    {
+      "id": "308648593802_1",
+      "name": "1",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:43:14 AM",
+      "barcode": "339329754478"
+    },
+    {
+      "id": "455284338073_ds",
+      "name": "ds",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:44:06 AM",
+      "barcode": "328082810911"
+    },
+    {
+      "id": "059479987737_tea cup",
+      "name": "tea cup",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:44:40 AM",
+      "barcode": "740544620564"
     }
   ]
 }

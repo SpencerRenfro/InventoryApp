@@ -62,12 +62,39 @@ export default function Example({
       <div className="mt-8 flow-root ">
         <div className="mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 ">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-            <div className="bg-slate-900  dark:bg-purple-500  py-4 flex flex-col w-full">
+            <div className="flex justify-end">
+              <div className=" bg-[#b98c2dff] dark:bg-white join w-96  justify-end rounded-none rounded-t-lg p-1">
+                <button className="bg-[#b98c2dff] border-none  rounded-t-none text-white dark:bg-white  join-item btn">
+                  1
+                </button>
+                <button
+                  className="bg-[#b98c2dff] border-none text-2xl rounded-t-none   dark:bg-white join-item btn btn-disabled"
+                  style={{ color: "white" }}
+                >
+                  ...
+                </button>
+                <button className="bg-[#b98c2dff]  border-none rounded-t-none text-white brightness-100 dark:bg-white join-item btn">
+                  99
+                </button>
+                <button className="bg-[#b98c2dff]  border-none  dark:bg-white text-white join-item btn">
+                  100
+                </button>
+              </div>
+            </div>
+            {/* <div className="join flex  justify-end">
+              <button className="join-item btn">1</button>
+              <button className="join-item btn btn-active">2</button>
+              <button className="join-item btn">3</button>
+              <button className="join-item btn">4</button>
+            </div> */}
+            <div className="bg-amber-400  dark:bg-purple-500  py-4 flex flex-col w-full  ">
               <div className="flex flex-col w-full ">
                 <div className="grid grid-cols-12 lg:flex lg:flex-wrap lg:justify-between">
                   <h2 className="pl-5 text-5xl font-bold text-white dark:text-black col-span-12">
+                    <span className="text-5xl pr-5">/</span>
                     Inventory
                   </h2>
+
                   <div className="form-control pr-10 m-2 w-72">
                     <input
                       type="text"
@@ -108,13 +135,33 @@ export default function Example({
                   Total Asset Value: ${totalAssetValue}
                 </p>
               </div>
+              <button className="">
+                <div className="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="border-b  p-4"
+                    height="100px"
+                    fill="none"
+                    viewBox="2 1 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <span className="">Statistics</span>
+              </button>
               {categoryFilter !== "" && (
                 <div className=" flex items-center">
-                <div className="flex">
-                  <p className="text-lg  mr-5 ">
-                    Filtering By:
-                  </p>
-                  <p className="text-lg border-b dark:border-b-purple-500">{categoryFilter}</p>
+                  <div className="flex">
+                    <p className="text-lg  mr-5 ">Filtering By:</p>
+                    <p className="text-lg border-b dark:border-b-purple-500">
+                      {categoryFilter}
+                    </p>
                   </div>
                 </div>
               )}

@@ -4,8 +4,26 @@ import { useFetch } from "../hooks/useFetch";
 import { useBarcodeGenerator } from "../hooks/useBarcodeGenerator";
 import { useNavigate } from "react-router-dom";
 
-//Modal Test code importing successfully created page to render
-// import CreationSuccessful from "./CRUD pages/CreationSuccessful";
+
+/*
+What this component does:
+Takes form data from the user and sends it to the server to create a new item.
+Creates a timestamp for the item creation and sends it to the server to /logs.
+Categories are fetched from the server and displayed in a dropdown.
+The user can also add a custom category.
+The user can add / delete a collection of subitems.
+upon submission, the user is navigated to a success or failure page.
+
+what can be improved:
+add useRef for showing errors or success messages for the card component
+Checking for duplicates categories
+The user can add a custom category, but the user cannot delete it.
+The UI for adding or not adding a custom category
+Loading states for the fetch requests
+aborting the fetch requests when the component is unmounted (have not tested this)
+*/
+
+
 
 //images
 import cube from "../assets/icons/cube.svg";
@@ -17,10 +35,8 @@ export default function AddItem() {
   const [barcodeState, setBarcodeState] = useState();
   const navigate = useNavigate();
 
-  // const { postData, data, error } = useFetch(
-  //   "http://localhost:8000/inventory",
-  //   "POST"
-  // );
+
+
 
   const {
     postData: postInventoryData,
@@ -33,6 +49,18 @@ export default function AddItem() {
     data: logsData,
     error: logsError,
   } = useFetch("http://localhost:8000/itemLogs", "POST");
+
+  const {
+    postData: postCategoryData,
+    data: categorySubmission,
+    error: categoryError
+  } = useFetch("http://localhost:8000/categories","POST");
+
+  const { data:categories,
+     error:categoriesError
+    } = useFetch("http://localhost:8000/categories", "GET");
+
+
 
   const [formData, setFormData] = useState({
     date: "",
@@ -57,6 +85,14 @@ export default function AddItem() {
     id: "",
   });
 
+  const [categoriesDataForm, setCategoriesDataForm] = useState({
+    name: "",
+    barcode: "",
+    barcodeCombinedName: "",
+  });
+
+
+
   const { canvasRef, barcode, barcodeObject } = useBarcodeGenerator(
     formData.name,
     setBarcodeState
@@ -66,9 +102,11 @@ export default function AddItem() {
     e.preventDefault();
     postInventoryData(formData);
     postLogsData(logsDataForm);
+    postCategoryData(categoriesDataForm);
+
   };
 
-  const handleCategory = (e) => {
+  const handleCategoryCheckBox = () => {
     setCustomCategory(!customCategory);
   };
 
@@ -114,9 +152,22 @@ export default function AddItem() {
       id: formData.barcodeCombinedName,
       date: today,
     });
+    setCategoriesDataForm({
+      ...categoriesDataForm,
+      name: formData.category,
+      barcode: barcodeState,
+      barcodeCombinedName: barcodeState + "_" + formData.name,
+    })
+    console.log('all data', formData, logsDataForm, categoriesDataForm);
   }, [formData.name, barcodeState]);
 
   useEffect(() => {
+    if(categorySubmission){
+      console.log('Category Submitted');
+    }
+    if(categoryError){
+      console.log('Category Error:', categoryError);
+    }
     if (inventoryData && logsData) {
       navigate("/item-creation-successful");
       // navigate("/");
@@ -185,20 +236,14 @@ export default function AddItem() {
                   }
                   required
                 >
-                  <option
-                    value="Art_Supplies"
-                    className="dark:hover:bg-purple-500 dark:focus:ring-purple-500 dark:focus:border-purple-500"
-                  >
-                    Art Supplies
-                  </option>
-                  <option value="Education" className="hover:bg-red-500">
-                    Education
-                  </option>
-                  <option value="Electronics">Electronics</option>
-                  <option value="Tools">Tools</option>
-                  <option value="Transport">Transport</option>
-                  <option value="Other">Other</option>
-                  <option>Add Category</option>
+                {
+                  categories && categories.map(categories => {
+                    return (
+                      <option value={categories.name} key={categories.id}>{categories.name}</option>
+                    );
+                  })
+                }
+
                 </select>
               </div>
             ) : (
@@ -320,7 +365,7 @@ export default function AddItem() {
                   type="checkbox"
                   defaultChecked
                   className="checkbox"
-                  onClick={handleCategory}
+                  onClick={handleCategoryCheckBox}
                 />
               </div>
             </div>
