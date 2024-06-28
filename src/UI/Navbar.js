@@ -1,19 +1,4 @@
-/*
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-import { Fragment } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 import {
   Disclosure,
   DisclosureButton,
@@ -23,12 +8,11 @@ import {
   MenuItem,
   MenuItems,
   Transition,
-} from '@headlessui/react'
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+} from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
@@ -41,42 +25,56 @@ export default function Example() {
               <div className="flex px-2 lg:px-0">
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
-                        : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
-                    >
-                        Dashboard
-                    </NavLink>
-                    <NavLink to="add-item" className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
-                        : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
-                    >
-                        Add-item
-                    </NavLink>
-                    <NavLink
-                        to="/check-in" className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
-                        : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')} >
-                        Sign Item In
-                    </NavLink>
-                    <NavLink
-                        to="/checkout"
-                        className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
-                        : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
-                    >
-                        Sign Item Out
-                    </NavLink>
-                    <NavLink
-                        to="/logs"
-                        className={({ isActive }) => (
-                        isActive ? 'inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300'
-                        : 'inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300')}
-                    >
-                        Logs
-                    </NavLink>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                        : "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                  <NavLink
+                    to="add-item"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                        : "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                    }
+                  >
+                    Add-item
+                  </NavLink>
+                  <NavLink
+                    to="/check-in"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                        : "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                    }
+                  >
+                    Sign Item In
+                  </NavLink>
+                  <NavLink
+                    to="/checkout"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                        : "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                    }
+                  >
+                    Sign Item Out
+                  </NavLink>
+                  <NavLink
+                    to="/logs"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                        : "inline-flex items-center border-b-2  px-1 pt-1 text-sm font-medium text-gray-900 dark:text-slate-300"
+                    }
+                  >
+                    Logs
+                  </NavLink>
                 </div>
               </div>
               {/* <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
@@ -146,7 +144,10 @@ export default function Example() {
                         {({ focus }) => (
                           <a
                             href="#"
-                            className={classNames(focus ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              focus ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700",
+                            )}
                           >
                             Your Profile
                           </a>
@@ -156,7 +157,10 @@ export default function Example() {
                         {({ focus }) => (
                           <a
                             href="#"
-                            className={classNames(focus ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              focus ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700",
+                            )}
                           >
                             Settings
                           </a>
@@ -166,7 +170,10 @@ export default function Example() {
                         {({ focus }) => (
                           <a
                             href="#"
-                            className={classNames(focus ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(
+                              focus ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700",
+                            )}
                           >
                             Sign out
                           </a>
@@ -221,8 +228,12 @@ export default function Example() {
                   />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">Tom Cook</div>
-                  <div className="text-sm font-medium text-gray-500">tom@example.com</div>
+                  <div className="text-base font-medium text-gray-800">
+                    Tom Cook
+                  </div>
+                  <div className="text-sm font-medium text-gray-500">
+                    tom@example.com
+                  </div>
                 </div>
                 <button
                   type="button"
@@ -261,5 +272,5 @@ export default function Example() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
