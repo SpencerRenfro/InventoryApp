@@ -27,295 +27,34 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    }
+  ],
+  "categories": [
+    {
+      "id": "Art_Supplies",
+      "name": "Art_Supplies"
     },
     {
-      "id": "9aaa",
-      "name": "New item",
-      "category": "",
-      "price": 300,
-      "serialNumber": "dsaf",
-      "description": "New item",
-      "barcode": "077541687677",
-      "barcodeCombinedName": "077541687677_New item",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
+      "id": "Education",
+      "name": "Education"
     },
     {
-      "id": "9113",
-      "name": "New item",
-      "category": "Education",
-      "price": 300,
-      "serialNumber": "123",
-      "description": "",
-      "barcode": "579646363646",
-      "barcodeCombinedName": "579646363646_New item",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "date": "",
-      "status": "IN"
+      "id": "Electronics",
+      "name": "Electronics"
     },
     {
-      "id": "0a42",
-      "name": "new item",
-      "category": "",
-      "price": 25,
-      "serialNumber": "123",
-      "description": "THis is an item",
-      "barcode": "690904758818",
-      "barcodeCombinedName": "690904758818_new item",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "date": "",
-      "status": "IN"
+      "id": "Tools",
+      "name": "Tools"
     },
     {
-      "id": "b157",
-      "name": "sd",
-      "category": "",
-      "price": null,
-      "serialNumber": "s",
-      "description": "",
-      "barcode": "261794902167",
-      "barcodeCombinedName": "261794902167_sd",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "date": "06/25/2024, 03:27:40 AM",
-      "status": "IN"
+      "id": "Transport",
+      "name": "Transport"
     },
     {
-      "id": "3a30",
-      "date": "06/25/2024, 03:51:56 AM",
-      "name": "LeMillion",
-      "category": "",
-      "price": 1000000,
-      "serialNumber": "10000000000000",
-      "description": "Million",
-      "barcode": "079498404880",
-      "barcodeCombinedName": "079498404880_LeMillion",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
+      "id": "Other",
+      "name": "other"
     },
     {
-      "id": "187c",
-      "date": "06/25/2024, 03:51:56 AM",
-      "name": "LeMillion",
-      "category": "",
-      "price": 1000000,
-      "serialNumber": "10000000000000",
-      "description": "Million",
-      "barcode": "079498404880",
-      "barcodeCombinedName": "079498404880_LeMillion",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "0a87",
-      "date": "06/25/2024, 03:51:56 AM",
-      "name": "LeMillion",
-      "category": "",
-      "price": 1000000,
-      "serialNumber": "10000000000000",
-      "description": "Million",
-      "barcode": "079498404880",
-      "barcodeCombinedName": "079498404880_LeMillion",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "5f7f",
-      "date": "06/25/2024, 03:54:44 AM",
-      "name": "Olyvias-Butt",
-      "category": "",
-      "price": 6969696969,
-      "serialNumber": "6969696969",
-      "description": "juicy booty",
-      "barcode": "344931289742",
-      "barcodeCombinedName": "344931289742_Olyvias-Butt",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "8620",
-      "date": "06/25/2024, 03:57:23 AM",
-      "name": "zxz",
-      "category": "",
-      "price": null,
-      "serialNumber": "xzxz",
-      "description": "",
-      "barcode": "429234399834",
-      "barcodeCombinedName": "429234399834_zxz",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "0f8e",
-      "date": "06/25/2024, 03:57:54 AM",
-      "name": "sdsd",
-      "category": "",
-      "price": null,
-      "serialNumber": "ds",
-      "description": "",
-      "barcode": "905993058027",
-      "barcodeCombinedName": "905993058027_sdsd",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "a41a",
-      "date": "06/25/2024, 08:14:03 PM",
-      "name": "22",
-      "category": "",
-      "price": 22,
-      "serialNumber": "w",
-      "description": "",
-      "barcode": "125027356963",
-      "barcodeCombinedName": "125027356963_22",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "b764",
-      "date": "06/25/2024, 08:25:58 PM",
-      "name": "dsf",
-      "category": "",
-      "price": null,
-      "serialNumber": "dsa",
-      "description": "sa",
-      "barcode": "355256877181",
-      "barcodeCombinedName": "355256877181_dsf",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "36f8",
-      "date": "06/25/2024, 08:27:50 PM",
-      "name": "sad",
-      "category": "",
-      "price": null,
-      "serialNumber": "sad",
-      "description": "sad",
-      "barcode": "455781954672",
-      "barcodeCombinedName": "455781954672_sad",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "5178",
-      "date": "06/25/2024, 08:27:50 PM",
-      "name": "sad",
-      "category": "",
-      "price": null,
-      "serialNumber": "sad",
-      "description": "sad",
-      "barcode": "455781954672",
-      "barcodeCombinedName": "455781954672_sad",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "492c",
-      "date": "06/25/2024, 08:28:17 PM",
-      "name": "1",
-      "category": "",
-      "price": 1,
-      "serialNumber": "1",
-      "description": "1",
-      "barcode": "113575930695",
-      "barcodeCombinedName": "113575930695_1",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "8d93",
-      "date": "06/25/2024, 08:28:17 PM",
-      "name": "1",
-      "category": "",
-      "price": 1,
-      "serialNumber": "1",
-      "description": "1",
-      "barcode": "113575930695",
-      "barcodeCombinedName": "113575930695_1",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "30ad",
-      "date": "06/25/2024, 08:28:46 PM",
-      "name": "ds",
-      "category": "",
-      "price": null,
-      "serialNumber": "ds",
-      "description": "ds",
-      "barcode": "291114960621",
-      "barcodeCombinedName": "291114960621_ds",
-      "itemCollection": [
-        "ds"
-      ],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "b014",
-      "date": "06/26/2024, 12:26:43 AM",
-      "name": "ds",
-      "category": "",
-      "price": null,
-      "serialNumber": "s",
-      "description": "",
-      "barcode": "049297539749",
-      "barcodeCombinedName": "049297539749_ds",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "99ef",
-      "date": "06/26/2024, 01:44:25 AM",
-      "name": "Book",
-      "category": "Education",
-      "price": 300,
-      "serialNumber": "123456",
-      "description": "A love novel",
-      "barcode": "775814306493",
-      "barcodeCombinedName": "775814306493_Book",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-
       "id": "4045",
       "date": "06/26/2024, 05:49:33 PM",
       "name": "Xbox",
@@ -443,7 +182,55 @@
       "action": "CREATED",
       "date": "06/26/2024, 11:44:31 PM",
       "barcode": "153050163713"
-
+    },
+    {
+      "id": "484484737988_pen",
+      "name": "pen",
+      "action": "CREATED",
+      "date": "06/27/2024, 12:14:21 AM",
+      "barcode": "010550075893"
+    },
+    {
+      "id": "614781573155_ds",
+      "name": "ds",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:37:33 AM",
+      "barcode": "185018614172"
+    },
+    {
+      "id": "462685916565_coffe cup",
+      "name": "coffe cup",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:39:16 AM",
+      "barcode": "268580706861"
+    },
+    {
+      "id": "763802759488_new coffe cup",
+      "name": "new coffe cup",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:41:42 AM",
+      "barcode": "014243190796"
+    },
+    {
+      "id": "308648593802_1",
+      "name": "1",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:43:14 AM",
+      "barcode": "339329754478"
+    },
+    {
+      "id": "455284338073_ds",
+      "name": "ds",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:44:06 AM",
+      "barcode": "328082810911"
+    },
+    {
+      "id": "059479987737_tea cup",
+      "name": "tea cup",
+      "action": "CREATED",
+      "date": "06/27/2024, 03:44:40 AM",
+      "barcode": "740544620564"
     }
   ]
 }

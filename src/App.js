@@ -35,7 +35,11 @@ function App() {
         <Route
           path="/"
           element={
-            <Inventory setShowModal={setShowModal} categoryFilter={filter} />
+            <Inventory
+              setShowModal={setShowModal}
+              categoryFilter={filter}
+              modalHandler={modalHandler}
+            />
           }
         />
         <Route path="/add-item" element={<AddItem />} />
@@ -54,12 +58,25 @@ function App() {
         />
       </Routes>
       {showModal && (
-        <Modal onClose={modalHandler}>
-          <FilterModal setFilter={setFilter} filter={filter} />
+        <Modal onClose={() => setShowModal(false)}>
+          {showFilterModal && (
+            <FilterModal
+              setFilter={setFilter}
+              filter={filter}
+              onClose={() => {
+                setShowFilterModal(false);
+                setShowModal(false);
+              }}
+            />
+          )}
+          {showStatisticsModal && (
+            <StatisticsModal onClose={() => {
+              setShowStatisticsModal(false)
+              setShowModal(false)
+            }} />
+          )}
         </Modal>
       )}
-          <FilterModal setFilter={setFilter} filter={filter}  onClose={modalHandler}/>
-        </Modal>)}
     </div>
   );
 }

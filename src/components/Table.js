@@ -1,30 +1,39 @@
-import BarcodeGenerator from "./BarcodeGenerator";
-import { useBarcode } from "../hooks/useBarcode";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-//icons
+
+// Icons
 import artIcon from "../assets/icons/art_supply.svg";
 import transportIcon from "../assets/icons/transport.svg";
 import electronicIcon from "../assets/icons/bolt.svg";
 import educationIcon from "../assets/icons/education.svg";
 import toolIcon from "../assets/icons/power_tool.svg";
 import rawIcon from "../assets/icons/raw_material.svg";
-import other from "../assets/icons/other.svg";
-import FilterIcon from "../UI//icons/FilterIcon";
+import otherIcon from "../assets/icons/other.svg";
+import FilterIcon from "../UI/icons/FilterIcon";
+import StatisticsIcon from "../UI/icons/StatisticsIcon";
 
-export default function Example({
-  inventory,
-  setShowModal,
-  categoryFilter = "",
-}) {
+export default function Example({ inventory, setShowModal, categoryFilter = "", modalHandler }) {
   const [totalAssetValue, setTotalAssetValue] = useState(0);
   const [checkedIn, setCheckedIn] = useState(0);
   const [checkedOut, setCheckedOut] = useState(0);
+
+  // Function to open the statistics modal
+  const openStatisticsModal = () => {
+    setShowModal(true);
+    // Call modalHandler from props to open statistics modal
+    modalHandler(false, true);
+  };
+  const openFilterModal = () => {
+    setShowModal(true);
+    // Call modalHandler from props to open filter modal
+    modalHandler(true, false);
+  }
 
   useEffect(() => {
     let total = 0;
     let checkedInCount = 0;
     let checkedOutCount = 0;
+
     if (categoryFilter === "") {
       inventory.forEach((item) => {
         if (!isNaN(parseFloat(item.price))) {
@@ -37,9 +46,7 @@ export default function Example({
         }
       });
     } else {
-      let filteredItems = inventory.filter(
-        (item) => item.category === categoryFilter
-      );
+      let filteredItems = inventory.filter((item) => item.category === categoryFilter);
       filteredItems.forEach((item) => {
         if (!isNaN(parseFloat(item.price))) {
           total += parseFloat(item.price);
@@ -59,15 +66,36 @@ export default function Example({
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 dark:bg-slate-900 dark:text-slate-300 mx-20">
-      <div className="mt-8 flow-root ">
-        <div className="mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 ">
+      <div className="mt-8 flow-root">
+        <div className="mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-            <div className="bg-slate-900  dark:bg-purple-500  py-4 flex flex-col w-full">
-              <div className="flex flex-col w-full ">
+            <div className="flex justify-end">
+              {/* Pagination buttons */}
+              <div className=" bg-[#b98c2dff] dark:bg-white join w-96  justify-end rounded-none rounded-t-lg p-1">
+                <button className="bg-[#b98c2dff] border-none  rounded-t-none text-white dark:bg-white  join-item btn">
+                  1
+                </button>
+                <button className="bg-[#b98c2dff] border-none text-2xl rounded-t-none   dark:bg-white join-item btn btn-disabled">
+                  ...
+                </button>
+                <button className="bg-[#b98c2dff]  border-none rounded-t-none text-white brightness-100 dark:bg-white join-item btn">
+                  99
+                </button>
+                <button className="bg-[#b98c2dff]  border-none  dark:bg-white text-white join-item btn">
+                  100
+                </button>
+              </div>
+            </div>
+
+            {/* Inventory title and search */}
+            <div className="bg-amber-400  dark:bg-purple-500  py-4 flex flex-col w-full">
+              <div className="flex flex-col w-full">
                 <div className="grid grid-cols-12 lg:flex lg:flex-wrap lg:justify-between">
                   <h2 className="pl-5 text-5xl font-bold text-white dark:text-black col-span-12">
+                    <span className="text-5xl pr-5">/</span>
                     Inventory
                   </h2>
+
                   <div className="form-control pr-10 m-2 w-72">
                     <input
                       type="text"
@@ -78,10 +106,11 @@ export default function Example({
                 </div>
               </div>
             </div>
+
+            {/* Inventory stats */}
             <div className="flex justify-start   w-full  gap-10">
               <div className="flex align-middle h-max">
                 <p className="text-lg align-text-bottom mr-5">Checked In</p>
-
                 <svg
                   className="w-3  fill-green-400 align-center mr-1 m-1"
                   viewBox="0 0 6 6"
@@ -93,7 +122,6 @@ export default function Example({
               </div>
               <div className="flex align-middle h-max">
                 <p className="text-lg align-text-bottom mr-5">Checked Out</p>
-
                 <svg
                   className="w-3  fill-red-400 align-center mr-1 m-1"
                   viewBox="0 0 6 6"
@@ -103,28 +131,35 @@ export default function Example({
                 </svg>
                 <p className=" self-center">{checkedOut}</p>
               </div>
-              <div className="grow">
+              <div className={`${categoryFilter !== "" ? "" : "grow"}`}>
                 <p className="text-lg align-text-bottom mr-5 ">
                   Total Asset Value: ${totalAssetValue}
                 </p>
               </div>
               {categoryFilter !== "" && (
-                <div className=" flex items-center">
-                <div className="flex">
-                  <p className="text-lg  mr-5 ">
-                    Filtering By:
-                  </p>
-                  <p className="text-lg border-b dark:border-b-purple-500">{categoryFilter}</p>
+                <div className="flex grow ">
+                  <div className="flex">
+                    <p className="text-lg  mr-5 ">Filtering By:</p>
+                    <p className="text-lg">{categoryFilter}</p>
                   </div>
                 </div>
               )}
+
+              {/* Button to open statistics modal */}
+              <button onClick={openStatisticsModal} className="flex items-center">
+                <StatisticsIcon />
+              </button>
+
+              {/* Filter icon */}
               <div className="">
-                <button onClick={setShowModal}>
+                <button onClick={openFilterModal}>
                   <FilterIcon />
                 </button>
               </div>
             </div>
-            <table className="min-w-full divide-y divide-gray-300 ">
+
+            {/* Inventory table */}
+            <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr className="grid grid-cols-12 col-span-12 gap-20">
                   <th
@@ -162,10 +197,7 @@ export default function Example({
               <tbody className="divide-y divide-gray-200 bg-white dark:bg-slate-900 dark:text-slate-300">
                 {inventory.map((item) =>
                   categoryFilter === "" || item.category === categoryFilter ? (
-                    <tr
-                      key={item.id}
-                      className="grid grid-cols-12 col-span-12 gap-10"
-                    >
+                    <tr key={item.id} className="grid grid-cols-12 col-span-12 gap-10">
                       <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0 col-span-2">
                         <div className="flex flex-grow-1 items-center">
                           <div className="ml-4">
@@ -181,7 +213,7 @@ export default function Example({
                         </div>
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500 col-span-2">
-                        <div className=" flex text-gray-900 dark:text-slate-300">
+                        <div className="flex text-gray-900 dark:text-slate-300">
                           <img
                             className="mr-5"
                             style={{ height: "20px" }}
@@ -198,7 +230,7 @@ export default function Example({
                                 ? transportIcon
                                 : item.category === "Raw_Materials"
                                 ? rawIcon
-                                : other
+                                : otherIcon
                             }
                             alt={`category_type:${item.category}`}
                           />
@@ -243,7 +275,7 @@ export default function Example({
                               to={`/inventory/${item.id}`}
                               className="text-indigo-600 hover:text-indigo-900 dark:text-slate-300 mx-10"
                             >
-                              View More Details<span className="sr-only"></span>
+                              View More Details
                             </Link>
                             <Link
                               target="_blank"
@@ -261,16 +293,6 @@ export default function Example({
               </tbody>
             </table>
           </div>
-          {/* <div className="flex  justify-end">
-            <div>
-              <button
-                type="button"
-                className="block rounded-md bg-indigo-600 px-3 py-2 mr-10 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Add Item
-              </button>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

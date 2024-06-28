@@ -13,7 +13,7 @@ function Inventory(props) {
 
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {data && <div><Table inventory={data} setShowModal={props.setShowModal}  categoryFilter={props.categoryFilter}/> </div>}
+      {data && <div><Table inventory={data} setShowModal={props.setShowModal}  categoryFilter={props.categoryFilter} modalHandler={props.modalHandler}/> </div>}
       {!data && !isPending && <InventorySkeleton />}
       {/* <InventorySkeleton /> */}
     </div>
