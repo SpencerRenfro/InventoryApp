@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../../ui/modal/Modal";
 
-function CreationSuccessful(props) {
+export default function CreationSuccessful(props) {
   const [showModal, setShowModal] = useState(true);
   const modalHandler = () => {
     setShowModal(false);
@@ -14,6 +14,3 @@ function CreationSuccessful(props) {
     </div>
   );
 }
-
-export default CreationSuccessful;
-

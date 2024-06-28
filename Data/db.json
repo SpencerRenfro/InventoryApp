@@ -27,6 +27,21 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "2bdc",
+      "date": "06/28/2024, 11:35:39 AM",
+      "name": "Xbox",
+      "category": "Electronics",
+      "price": 500,
+      "serialNumber": "03204029",
+      "description": "Gaming Console",
+      "barcode": "023578846982",
+      "barcodeCombinedName": "023578846982_Xbox",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "categories": [
@@ -52,31 +67,13 @@
     },
     {
       "id": "Other",
-      "name": "other"
+      "name": "Other"
     },
     {
-      "id": "4045",
-      "date": "06/26/2024, 05:49:33 PM",
-      "name": "Xbox",
-      "category": "Electronics",
-      "price": 500,
-      "serialNumber": "089273490",
-      "description": "Gaming Console",
-      "barcode": "000795891431",
-      "barcodeCombinedName": "000795891431_Xbox",
-      "id": "72bf",
-      "date": "06/26/2024, 11:44:31 PM",
-      "name": "fds",
-      "category": "",
-      "price": null,
-      "serialNumber": "dsd",
-      "description": "ds",
-      "barcode": "153050163713",
-      "barcodeCombinedName": "153050163713_fds",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
+      "id": "f5ad",
+      "name": "",
+      "barcode": "023578846982",
+      "barcodeCombinedName": "023578846982_Xbox"
     }
   ],
   "itemLogs": [
@@ -170,18 +167,11 @@
       "barcode": "775814306493"
     },
     {
-
       "id": "313218982460_Xbox",
       "name": "Xbox",
       "action": "CREATED",
       "date": "06/26/2024, 05:49:33 PM",
       "barcode": "000795891431"
-
-      "id": "773543118771_fds",
-      "name": "fds",
-      "action": "CREATED",
-      "date": "06/26/2024, 11:44:31 PM",
-      "barcode": "153050163713"
     },
     {
       "id": "484484737988_pen",
@@ -231,6 +221,13 @@
       "action": "CREATED",
       "date": "06/27/2024, 03:44:40 AM",
       "barcode": "740544620564"
+    },
+    {
+      "id": "184911347473_Xbox",
+      "name": "Xbox",
+      "action": "CREATED",
+      "date": "06/28/2024, 11:35:39 AM",
+      "barcode": "023578846982"
     }
   ]
 }
