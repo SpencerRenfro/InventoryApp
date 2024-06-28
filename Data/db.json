@@ -55,8 +55,28 @@
       "name": "other"
     },
     {
-      "id": "Raw_Materials",
-      "name": "Raw_Materials"
+      "id": "4045",
+      "date": "06/26/2024, 05:49:33 PM",
+      "name": "Xbox",
+      "category": "Electronics",
+      "price": 500,
+      "serialNumber": "089273490",
+      "description": "Gaming Console",
+      "barcode": "000795891431",
+      "barcodeCombinedName": "000795891431_Xbox",
+      "id": "72bf",
+      "date": "06/26/2024, 11:44:31 PM",
+      "name": "fds",
+      "category": "",
+      "price": null,
+      "serialNumber": "dsd",
+      "description": "ds",
+      "barcode": "153050163713",
+      "barcodeCombinedName": "153050163713_fds",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "itemLogs": [
@@ -150,6 +170,13 @@
       "barcode": "775814306493"
     },
     {
+
+      "id": "313218982460_Xbox",
+      "name": "Xbox",
+      "action": "CREATED",
+      "date": "06/26/2024, 05:49:33 PM",
+      "barcode": "000795891431"
+
       "id": "773543118771_fds",
       "name": "fds",
       "action": "CREATED",
