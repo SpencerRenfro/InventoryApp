@@ -58,6 +58,8 @@ function App() {
           <FilterModal setFilter={setFilter} filter={filter} />
         </Modal>
       )}
+          <FilterModal setFilter={setFilter} filter={filter}  onClose={modalHandler}/>
+        </Modal>)}
     </div>
   );
 }

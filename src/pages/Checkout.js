@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 //images
-import cube from "../assets/icons/cube.svg";
 import checkout from "../assets/icons/checkout.svg";
 
 //components
@@ -9,8 +8,8 @@ import DateSelection from "../components/DateSelection";
 import ItemFoundCard from "../components/ItemFoundCard";
 
 //DatePicker
-// import DatePicker from 'react-datepicker';
-// import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 //hooks
 import { useFindItem } from "../hooks/useFindItem";
@@ -20,6 +19,14 @@ function Checkout() {
   const [inputText, setInputText] = useState("");
   const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [signOutFormData, setSignOutFormData] = useState({
+    name: "",
+    date: "",
+    item: "",
+    action: "OUT",
+    barcode: "",
+  });
 
   const handleChange = (e) => {
     setInputText(e.target.value);
@@ -55,20 +62,46 @@ function Checkout() {
         </div>
         <form className="mx-20">
           <div className="flex flex-col w-full gap-5 items-start">
-            <label className="w-2/3">
-              <h2 className="font-bold dark:text-white ">Item Name</h2>
-              <input
-                className="w-full rounded-xl dark:focus:ring-purple-500 dark:focus:border-purple-500 dark:bg-purple-500 dark:text-white"
-                type="text"
-                required
-              />
-            </label>
             <div className="w-full">
               <label>
-                <h2 className="font-bold dark:text-white">Today's Date</h2>
+                <h2 className="font-bold dark:text-white">Date</h2>
               </label>
-              {/* <DateSelection /> */}
-              {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>First Name</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>Last Name</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>Phone Number</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
+            </div>
+            <div className="w-1/2">
+              <label>
+                <h2>Email</h2>
+              </label>
+              <input
+                className="w-full border-2 border-purple-500 rounded-lg p-2"
+              />
             </div>
             <div>
               <label>
@@ -80,6 +113,7 @@ function Checkout() {
                   displayText={displayText}
                 />
               </label>
+
               <div>
                 {isPending && (
                   <span className="loading loading-bars loading-xs"></span>
@@ -114,7 +148,6 @@ function Checkout() {
                 )}
               </div>
             </div>
-
           </div>
         </form>
       </div>
