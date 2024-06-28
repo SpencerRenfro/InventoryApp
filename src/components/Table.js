@@ -130,11 +130,22 @@ export default function Example({
                 </svg>
                 <p className=" self-center">{checkedOut}</p>
               </div>
-              <div className="grow">
+              <div className={`${categoryFilter !== "" ? "" : "grow"}`}>
                 <p className="text-lg align-text-bottom mr-5 ">
                   Total Asset Value: ${totalAssetValue}
                 </p>
               </div>
+              {categoryFilter !== "" && (
+                <div className="flex grow ">
+                  <div className="flex">
+                    <p className="text-lg  mr-5 ">Filtering By:</p>
+                    <p className="text-lg">
+                      {categoryFilter}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <button className="">
                 <div className="">
                   <svg
@@ -155,16 +166,7 @@ export default function Example({
                 </div>
                 <span className="">Statistics</span>
               </button>
-              {categoryFilter !== "" && (
-                <div className=" flex items-center">
-                  <div className="flex">
-                    <p className="text-lg  mr-5 ">Filtering By:</p>
-                    <p className="text-lg border-b dark:border-b-purple-500">
-                      {categoryFilter}
-                    </p>
-                  </div>
-                </div>
-              )}
+
               <div className="">
                 <button onClick={setShowModal}>
                   <FilterIcon />
