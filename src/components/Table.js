@@ -9,10 +9,15 @@ import educationIcon from "../assets/icons/education.svg";
 import toolIcon from "../assets/icons/power_tool.svg";
 import rawIcon from "../assets/icons/raw_material.svg";
 import otherIcon from "../assets/icons/other.svg";
-import FilterIcon from "../UI/icons/FilterIcon";
-import StatisticsIcon from "../UI/icons/StatisticsIcon";
+import FilterIcon from "../ui/icons/FilterIcon";
+import StatisticsIcon from "../ui/icons/StatisticsIcon";
 
-export default function Example({ inventory, setShowModal, categoryFilter = "", modalHandler }) {
+export default function Example({
+  inventory,
+  setShowModal,
+  categoryFilter = "",
+  modalHandler,
+}) {
   const [totalAssetValue, setTotalAssetValue] = useState(0);
   const [checkedIn, setCheckedIn] = useState(0);
   const [checkedOut, setCheckedOut] = useState(0);
@@ -27,7 +32,7 @@ export default function Example({ inventory, setShowModal, categoryFilter = "", 
     setShowModal(true);
     // Call modalHandler from props to open filter modal
     modalHandler(true, false);
-  }
+  };
 
   useEffect(() => {
     let total = 0;
@@ -46,7 +51,9 @@ export default function Example({ inventory, setShowModal, categoryFilter = "", 
         }
       });
     } else {
-      let filteredItems = inventory.filter((item) => item.category === categoryFilter);
+      let filteredItems = inventory.filter(
+        (item) => item.category === categoryFilter,
+      );
       filteredItems.forEach((item) => {
         if (!isNaN(parseFloat(item.price))) {
           total += parseFloat(item.price);
@@ -146,7 +153,10 @@ export default function Example({ inventory, setShowModal, categoryFilter = "", 
               )}
 
               {/* Button to open statistics modal */}
-              <button onClick={openStatisticsModal} className="flex items-center">
+              <button
+                onClick={openStatisticsModal}
+                className="flex items-center"
+              >
                 <StatisticsIcon />
               </button>
 
@@ -197,7 +207,10 @@ export default function Example({ inventory, setShowModal, categoryFilter = "", 
               <tbody className="divide-y divide-gray-200 bg-white dark:bg-slate-900 dark:text-slate-300">
                 {inventory.map((item) =>
                   categoryFilter === "" || item.category === categoryFilter ? (
-                    <tr key={item.id} className="grid grid-cols-12 col-span-12 gap-10">
+                    <tr
+                      key={item.id}
+                      className="grid grid-cols-12 col-span-12 gap-10"
+                    >
                       <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0 col-span-2">
                         <div className="flex flex-grow-1 items-center">
                           <div className="ml-4">
@@ -221,16 +234,16 @@ export default function Example({ inventory, setShowModal, categoryFilter = "", 
                               item.category === "Art_Supplies"
                                 ? artIcon
                                 : item.category === "Electronics"
-                                ? electronicIcon
-                                : item.category === "Education"
-                                ? educationIcon
-                                : item.category === "Tools"
-                                ? toolIcon
-                                : item.category === "Transport"
-                                ? transportIcon
-                                : item.category === "Raw_Materials"
-                                ? rawIcon
-                                : otherIcon
+                                  ? electronicIcon
+                                  : item.category === "Education"
+                                    ? educationIcon
+                                    : item.category === "Tools"
+                                      ? toolIcon
+                                      : item.category === "Transport"
+                                        ? transportIcon
+                                        : item.category === "Raw_Materials"
+                                          ? rawIcon
+                                          : otherIcon
                             }
                             alt={`category_type:${item.category}`}
                           />
@@ -288,7 +301,7 @@ export default function Example({ inventory, setShowModal, categoryFilter = "", 
                         </div>
                       </td>
                     </tr>
-                  ) : null
+                  ) : null,
                 )}
               </tbody>
             </table>
