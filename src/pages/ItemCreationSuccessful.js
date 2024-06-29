@@ -1,5 +1,6 @@
 import React from "react";
-import Modal from "../ui/modal/Modal";
+import { Link } from "react-router-dom";
+import Inventory from "./Inventory";
 import checkmarkPlain from "../assets/icons/checkmarkPlain.svg";
 
 function ItemCreationSuccessful() {
@@ -9,8 +10,8 @@ function ItemCreationSuccessful() {
         className="w-1/4 grid grid-cols-12 justify-items-center dark:bg-slate-700 rounded-lg shadow-xl "
         style={{ height: "600px" }}
       >
-        <div className="col-span-12 content-center rounded-t-lg w-full bg-green-300">
-          <h1 className="font-bold text-center text-slate-700 text-2xl">
+        <div className="col-span-12 content-center border w-full bg-green-300">
+          <h1 className="font-bold text-center text-white text-2xl">
             Item Creation Successful
           </h1>
         </div>
@@ -23,7 +24,11 @@ function ItemCreationSuccessful() {
           />
         </div>
         <div className="col-span-12 justify-items-center">
-          <Modal />
+          <div className="grid justify-items-center">
+            <Link to="/" element={<Inventory />}>
+              <button className="btn w-48">Close</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
