@@ -26,7 +26,7 @@ function Logs() {
                   <tr key={index}>
                     <td>{log.name}</td>
                     <td>{log.id}</td>
-                    <td>{log.action}</td>
+                    <td className={`${log.action === "CREATED" ?  'bg-yellow-200' : ''}`}>{log.action}</td>
                     <td>{log.date}</td>
                   </tr>
                 ))}
