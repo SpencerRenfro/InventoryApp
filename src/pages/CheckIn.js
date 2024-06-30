@@ -8,21 +8,7 @@ export default function CheckIn() {
   const [inputText, setInputText] = useState("");
   const [displayText, setDisplayText] = useState("");
   const [url, setUrl] = useState("");
-  const [formData, setFormData] = useState({
-    id: "",
-    date: "06/28/2024, 11:35:39 AM",
-    name: "",
-    category: "",
-    price: 0,
-    serialNumber: "",
-    description: "",
-    barcode: "",
-    barcodeCombinedName: "",
-    itemCollection: [],
-    barcodeUrl: "",
-    qrCode: "",
-    status: ""
-  });
+  const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     setInputText(e.target.value);
@@ -55,22 +41,11 @@ export default function CheckIn() {
     if (singleItem) {
       // Update formData with fetched item data
       setFormData({
-        id: singleItem.id,
-        date: "06/28/2024, 11:35:39 AM",
-        name: singleItem.name,
-        category: singleItem.category,
-        price: singleItem.price,
-        serialNumber: singleItem.serialNumber,
-        description: singleItem.description,
-        barcode: singleItem.barcode,
-        barcodeCombinedName: singleItem.barcodeCombinedName,
-        itemCollection: singleItem.itemCollection,
-        barcodeUrl: singleItem.barcodeUrl,
-        qrCode: singleItem.qrCode,
-        status: singleItem.status
+        ...singleItem,
+        status: "IN"
       });
-      // Set URL for PUT request with barcode query parameter
-      setUrl(`http://localhost:8000/inventory?barcode=${singleItem.barcode}`);
+      // Set URL for PUT request with id query parameter
+      setUrl(`http://localhost:8000/inventory?id=${singleItem.id}`);
     }
   }, [singleItem, displayText]);
 

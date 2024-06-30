@@ -262,6 +262,17 @@ export default function AddItem() {
                 />
               </label>
             )}
+            <div className="flex gap-5">
+                <label>
+                  <h2>Add Custom Category</h2>
+                </label>
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  className="checkbox"
+                  onClick={handleCategoryCheckBox}
+                />
+              </div>
             <label className="w-2/3">
               <h2 className="font-bold  dark:text-white ">Item Price</h2>
               <input
@@ -357,17 +368,7 @@ export default function AddItem() {
               >
                 Submit
               </button>
-              <div className="flex gap-5">
-                <label>
-                  <h2>Add Custom Category</h2>
-                </label>
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="checkbox"
-                  onClick={handleCategoryCheckBox}
-                />
-              </div>
+
             </div>
           </div>
         </form>

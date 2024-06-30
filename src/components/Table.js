@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 // Icons
@@ -12,12 +12,15 @@ import otherIcon from "../assets/icons/other.svg";
 import FilterIcon from "../ui/icons/FilterIcon";
 import StatisticsIcon from "../ui/icons/StatisticsIcon";
 
-export default function Example({
+
+
+export default function Table({
   inventory,
   setShowModal,
   categoryFilter = "",
   modalHandler,
 }) {
+
   const [totalAssetValue, setTotalAssetValue] = useState(0);
   const [checkedIn, setCheckedIn] = useState(0);
   const [checkedOut, setCheckedOut] = useState(0);
@@ -38,6 +41,7 @@ export default function Example({
     let total = 0;
     let checkedInCount = 0;
     let checkedOutCount = 0;
+    let categories = [""];
 
     if (categoryFilter === "") {
       inventory.forEach((item) => {
@@ -48,6 +52,10 @@ export default function Example({
           checkedInCount++;
         } else if (item.status === "OUT") {
           checkedOutCount++;
+        }
+        if(item.category && !categories.includes(item.category)) {
+          categories.push(item.category);
+          console.log('categories:', categories);
         }
       });
     } else {
@@ -78,17 +86,17 @@ export default function Example({
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
             <div className="flex justify-end">
               {/* Pagination buttons */}
-              <div className=" bg-[#b98c2dff] dark:bg-white join w-96  justify-end rounded-none rounded-t-lg p-1">
-                <button className="bg-[#b98c2dff] border-none  rounded-t-none text-white dark:bg-white  join-item btn">
+              <div className=" bg-[#b98c2dff] dark:bg-slate-300  join w-96  justify-end rounded-none rounded-t-lg p-1">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none  rounded-t-none text-white dark:text-black  join-item btn">
                   1
                 </button>
-                <button className="bg-[#b98c2dff] border-none text-2xl rounded-t-none   dark:bg-white join-item btn btn-disabled">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none  rounded-t-none text-white dark:text-black join-item btn btn-disabled text-3xl">
                   ...
                 </button>
-                <button className="bg-[#b98c2dff]  border-none rounded-t-none text-white brightness-100 dark:bg-white join-item btn">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none rounded-t-none text-white dark:text-black   join-item btn">
                   99
                 </button>
-                <button className="bg-[#b98c2dff]  border-none  dark:bg-white text-white join-item btn">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none text-white dark:text-black join-item btn">
                   100
                 </button>
               </div>

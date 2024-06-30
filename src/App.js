@@ -18,6 +18,8 @@ import Modal from "./ui/modal/Modal";
 import FilterModal from "./ui/modal/FilterModal";
 import StatisticsModal from "./ui/modal/StatisticsModal";
 
+
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [showStatisticsModal, setShowStatisticsModal] = useState(false);

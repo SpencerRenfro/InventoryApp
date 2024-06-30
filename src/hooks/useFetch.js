@@ -4,7 +4,6 @@ export const useFetch = (url, method = "GET") => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-  // for POST and PUT requests
   const [options, setOptions] = useState(null);
 
   const postData = (postData) => {
@@ -28,11 +27,7 @@ export const useFetch = (url, method = "GET") => {
   };
 
   useEffect(() => {
-    console.log(`
-      useFetch ran with url: ${url}
-      method: ${method}
-      options: ${JSON.stringify(options)}
-      `);
+    console.log(`useFetch ran with url: ${url}, method: ${method}, options: ${JSON.stringify(options)}`);
 
     const controller = new AbortController();
 
@@ -47,12 +42,11 @@ export const useFetch = (url, method = "GET") => {
         const data = await res.json();
 
         setIsPending(false);
-        console.log("data", data);
         setData(data);
         setError(null);
       } catch (err) {
         if (err.name === "AbortError") {
-          console.log("the fetch was aborted");
+          console.log("The fetch was aborted");
         } else {
           setIsPending(false);
           setError("Could not fetch the data");
