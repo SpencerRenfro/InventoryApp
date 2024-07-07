@@ -9,10 +9,14 @@ import educationIcon from "../assets/icons/education.svg";
 import toolIcon from "../assets/icons/power_tool.svg";
 import rawIcon from "../assets/icons/raw_material.svg";
 import otherIcon from "../assets/icons/other.svg";
+import next from "../assets/icons/next.svg";
+import back from "../assets/icons/back.svg";
+//React Icon Button Components
 import FilterIcon from "../ui/icons/FilterIcon";
 import StatisticsIcon from "../ui/icons/StatisticsIcon";
-
-
+import BackIcon from "../ui/icons/BackIcon";
+import NextIcon from "../ui/icons/NextIcon";
+import ClipboardButton from "../ui/icons/ClipboardButton";
 
 export default function Table({
   inventory,
@@ -20,7 +24,6 @@ export default function Table({
   categoryFilter = "",
   modalHandler,
 }) {
-
   const [totalAssetValue, setTotalAssetValue] = useState(0);
   const [checkedIn, setCheckedIn] = useState(0);
   const [checkedOut, setCheckedOut] = useState(0);
@@ -53,14 +56,14 @@ export default function Table({
         } else if (item.status === "OUT") {
           checkedOutCount++;
         }
-        if(item.category && !categories.includes(item.category)) {
+        if (item.category && !categories.includes(item.category)) {
           categories.push(item.category);
-          console.log('categories:', categories);
+          console.log("categories:", categories);
         }
       });
     } else {
       let filteredItems = inventory.filter(
-        (item) => item.category === categoryFilter,
+        (item) => item.category === categoryFilter
       );
       filteredItems.forEach((item) => {
         if (!isNaN(parseFloat(item.price))) {
@@ -85,19 +88,26 @@ export default function Table({
         <div className="mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
             <div className="flex justify-end">
-              {/* Pagination buttons */}
-              <div className=" bg-[#b98c2dff] dark:bg-slate-300  join w-96  justify-end rounded-none rounded-t-lg p-1">
-                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none  rounded-t-none text-white dark:text-black  join-item btn">
+              <div className=" bg-[#b98c2dff] dark:bg-slate-300   join w-96  justify-end rounded-none rounded-t-lg p-1">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 dark:hover:bg-slate-400 border-none text-white dark:text-black join-item btn">
+                  {/* <img src={back} width={25}  alt="back"/> */}
+                  {/* <svg fill={'black'} src={back} width={25} /> */}
+                  <BackIcon />
+                </button>
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 dark:hover:bg-slate-400 border-none  rounded-t-none text-white dark:text-black  join-item btn">
                   1
                 </button>
-                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none  rounded-t-none text-white dark:text-black join-item btn btn-disabled text-3xl">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 dark:hover:bg-slate-400 border-none hover:none rounded-t-none text-white dark:text-black join-item  btn pointer-events-none   text-3xl">
                   ...
                 </button>
-                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none rounded-t-none text-white dark:text-black   join-item btn">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 dark:hover:bg-slate-400 border-none rounded-t-none text-white dark:text-black   join-item btn">
                   99
                 </button>
-                <button className="bg-[#b98c2dff] dark:bg-slate-300 border-none text-white dark:text-black join-item btn">
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 dark:hover:bg-slate-400 border-none text-white dark:text-black join-item btn">
                   100
+                </button>
+                <button className="bg-[#b98c2dff] dark:bg-slate-300 dark:hover:bg-slate-400 border-none text-white dark:text-black join-item btn">
+                  <NextIcon />
                 </button>
               </div>
             </div>
@@ -242,16 +252,16 @@ export default function Table({
                               item.category === "Art_Supplies"
                                 ? artIcon
                                 : item.category === "Electronics"
-                                  ? electronicIcon
-                                  : item.category === "Education"
-                                    ? educationIcon
-                                    : item.category === "Tools"
-                                      ? toolIcon
-                                      : item.category === "Transport"
-                                        ? transportIcon
-                                        : item.category === "Raw_Materials"
-                                          ? rawIcon
-                                          : otherIcon
+                                ? electronicIcon
+                                : item.category === "Education"
+                                ? educationIcon
+                                : item.category === "Tools"
+                                ? toolIcon
+                                : item.category === "Transport"
+                                ? transportIcon
+                                : item.category === "Raw_Materials"
+                                ? rawIcon
+                                : otherIcon
                             }
                             alt={`category_type:${item.category}`}
                           />
@@ -278,26 +288,46 @@ export default function Table({
                         <div className="flex flex-col items-center py-2">
                           <div>
                             {item.barcode && (
-                              <a
-                                href={`https://barcode.tec-it.com/barcode.ashx?data=${item.barcode}&code=Code128&dpi=96`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <img
-                                  src={`https://barcode.tec-it.com/barcode.ashx?data=${item.barcode}&code=Code128&dpi=96`}
-                                  alt="Barcode"
-                                />
-                              </a>
+                              <div className="flex " >
+                                <a
+                                  href={`https://barcode.tec-it.com/barcode.ashx?data=${item.barcode}&code=Code128&dpi=96`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="w-full"
+                                >
+                                  <img
+                                    src={`https://barcode.tec-it.com/barcode.ashx?data=${item.barcode}&code=Code128&dpi=96`}
+                                    alt="Barcode"
+                                    className="w-full max-h-20"
+                                  />
+                                </a>
+                              </div>
                             )}
+                            <div className="flex mt-3 gap-3">
+                              <div className="grid content-center btn hover:bg-blue-700">
+                                <Link
+                                  target="_blank"
+                                  to={`/inventory/${item.id}`}
+                                  className=" dark:text-slate-300 mx-10"
+                                >
+                                  <h2 className="">View More Details</h2>
+                                </Link>
+                              </div>
+                              <div>
+                              <ClipboardButton barcode={item.barcode} />
+                              </div>
+                            </div>
                           </div>
-                          <div>
-                            <Link
-                              target="_blank"
-                              to={`/inventory/${item.id}`}
-                              className="text-indigo-600 hover:text-indigo-900 dark:text-slate-300 mx-10"
-                            >
-                              View More Details
-                            </Link>
+                          {/* <div className="flex pt-2 gap-5">
+                            <div className="grid content-center btn">
+                              <Link
+                                target="_blank"
+                                to={`/inventory/${item.id}`}
+                                className="text-indigo-600 hover:text-indigo-900 dark:text-slate-300 mx-10"
+                              >
+                                <h2 className="">View More Details</h2>
+                              </Link>
+                            </div>
                             <Link
                               target="_blank"
                               to={`/inventory/${item.barcode}`}
@@ -305,11 +335,12 @@ export default function Table({
                             >
                               View Barcode
                             </Link>
-                          </div>
+                            <ClipboardButton barcode={item.barcode} />
+                          </div> */}
                         </div>
                       </td>
                     </tr>
-                  ) : null,
+                  ) : null
                 )}
               </tbody>
             </table>

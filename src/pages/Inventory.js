@@ -25,7 +25,8 @@ function Inventory(props) {
       },
       {
         Title: "CATEGORIES",
-        categories: data.map((item) => item.category)
+        categories: data.map((item) => item.category),
+        filter: category.categoryFilter,
       }
   ]
     console.log('INVENTORY:', inventory)

@@ -1,10 +1,22 @@
 import { createContext, useReducer } from 'react';
 
-const initialState = {
-    categories: [],
-    selectedCategory: "",
-    categoryFilter: "",
-};
+const initialState = [
+    {
+        title: "Categories",
+        categories: [],
+        selectedCategory: "",
+        categoryFilter: "",
+    },
+    {
+        title: "Inventory Items",
+    },
+    {
+        title: "STATISTICS",
+    },
+    {
+        title: "LOGS",
+    }
+];
 const ACTIONS = {
     SET_CATEGORIES: "SET_CATEGORIES",
     SET_SELECTED_CATEGORY: "SET_SELECTED_CATEGORY",
