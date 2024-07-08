@@ -10,6 +10,7 @@ import {
   Transition,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Searchbar from "../components/Searchbar";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -75,6 +76,8 @@ export default function Example() {
                   >
                     Logs
                   </NavLink>
+
+
                 </div>
               </div>
               {/* <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">

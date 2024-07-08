@@ -6,6 +6,10 @@ export const useFetch = (url, method = "GET") => {
   const [error, setError] = useState(null);
   const [options, setOptions] = useState(null);
 
+  //this is for refetch
+  const [timestamp, setTimestamp] = useState(Date.now()); // Use timestamp to force refetch
+
+
   const postData = (postData) => {
     setOptions({
       method: "POST",
@@ -25,6 +29,10 @@ export const useFetch = (url, method = "GET") => {
       body: JSON.stringify(putData),
     });
   };
+  const refetch = () => {
+    console.log('Refetching data...');
+
+  };
 
   useEffect(() => {
     console.log(`useFetch ran with url: ${url}, method: ${method}, options: ${JSON.stringify(options)}`);
@@ -35,14 +43,14 @@ export const useFetch = (url, method = "GET") => {
       setIsPending(true);
 
       try {
-        const res = await fetch(url, { ...fetchOptions, signal: controller.signal });
+        const res = await fetch(url, { ...fetchOptions, signal: controller.signal });// Include options in fetch call, default to GET
         if (!res.ok) {
           throw new Error(res.statusText);
         }
         const data = await res.json();
 
-        setIsPending(false);
         setData(data);
+        setIsPending(false);
         setError(null);
       } catch (err) {
         if (err.name === "AbortError") {
@@ -54,6 +62,7 @@ export const useFetch = (url, method = "GET") => {
       }
     };
 
+
     if (method === "GET") {
       fetchData();
     } else if ((method === "POST" || method === "PUT") && options) {
@@ -63,7 +72,7 @@ export const useFetch = (url, method = "GET") => {
     return () => {
       controller.abort();
     };
-  }, [url, options, method]);
+  }, [url, options, method, timestamp]); // Include timestamp as a dependency --for refetch
 
-  return { data, isPending, error, postData, putData };
+  return { data, isPending, error, postData, putData, refetch}; //added refetch
 };

@@ -46,6 +46,7 @@ export default function CheckIn() {
       });
       // Set URL for PUT request with id query parameter
       setUrl(`http://localhost:8000/inventory?id=${singleItem.id}`);
+      //      setUrl(`http://localhost:8000/inventory/:id=${singleItem.id}`);
     }
   }, [singleItem, displayText]);
 
