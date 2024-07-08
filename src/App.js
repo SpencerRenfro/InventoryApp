@@ -17,6 +17,7 @@ import Navbar from "./ui/Navbar";
 import Modal from "./ui/modal/Modal";
 import FilterModal from "./ui/modal/FilterModal";
 import StatisticsModal from "./ui/modal/StatisticsModal";
+import InventoryTwo from "./pages/InventoryTwo";
 
 
 
@@ -48,7 +49,7 @@ function App() {
   }, [filter]);
 
   return (
-    <div className="dark:bg-slate-900 min-h-screen ">
+    <div className="dark:bg-slate-100 min-h-screen ">
       <Navbar />
       <Routes>
         <Route
@@ -67,6 +68,7 @@ function App() {
         <Route path="/logs" element={<Logs />} />
         <Route path="/inventory/:id" element={<SingleItemInfo />} />
         <Route path="/inventory/:barcode" element={<SingleBarcode />} />
+        <Route path="/inventoryTwo" element={<InventoryTwo />} />
         <Route
           path="/item-creation-successful"
           element={<ItemCreationSuccessful />}
