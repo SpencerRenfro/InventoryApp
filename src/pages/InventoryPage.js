@@ -6,14 +6,22 @@ import { useFetch } from "../hooks/useFetch";
 //components
 import Table from "../components/Table";
 import InventorySkeleton from "../components/skeleton/InventorySkeleton";
+import Inventory from '../components/inventory-table/Inventory'
 
 //reducers
 import { CategoryContext } from "../reducers/CategoryContext";
 
-function Inventory(props) {
+function InventoryPage(props) {
   const { data, isPending, error } = useFetch("http://localhost:8000/inventory");
   const category = useContext(CategoryContext);
 
+  /*
+  Invetory Page Responsible for fetching data from the server and passing it to the Inventory component
+  This page fetches Inventory Items, and categories from the server
+  change filter is controlled in App.js-- updating to change from its on FIlterInventory.js
+
+  Inventory.js handles the mapping of the fetched data and has many sub functional components each handiling a different aspect of the inventory table
+  */
   useEffect(() => {
     if(data){
       console.log('DATA:', data)
@@ -35,11 +43,12 @@ function Inventory(props) {
   }, [data]);
 
   return (
-    <div className="dark:bg-slate-900 dark:text-slate-300">
+    <div className="bg-slate-100">
 
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {data && <div><Table inventory={data} setShowModal={props.setShowModal}  categoryFilter={props.categoryFilter} modalHandler={props.modalHandler}/> </div>}
+      {/* {data && <div><Table inventory={data} setShowModal={props.setShowModal}  categoryFilter={props.categoryFilter} modalHandler={props.modalHandler}/> </div>} */}
+      {data && <div><Inventory inventoryItems={data} setShowModal={props.setShowModal}   modalHandler={props.modalHandler}/> </div>}
       {!data && !isPending && <InventorySkeleton />}
       {console.log('CATEGORY FROM USECONTEXT:', category)}
       {/* <InventorySkeleton /> */}
@@ -47,4 +56,4 @@ function Inventory(props) {
   );
 }
 
-export default Inventory;
+export default InventoryPage;

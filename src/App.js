@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // Pages
 import AddItem from "./pages/AddItem";
 import Checkout from "./pages/Checkout";
-import Inventory from "./pages/Inventory";
+import InventoryPage from "./pages/InventoryPage";
 import CheckIn from "./pages/CheckIn";
 import Logs from "./pages/Logs";
 import SingleItemInfo from "./pages/ItemInfo";
@@ -17,7 +17,9 @@ import Navbar from "./ui/Navbar";
 import Modal from "./ui/modal/Modal";
 import FilterModal from "./ui/modal/FilterModal";
 import StatisticsModal from "./ui/modal/StatisticsModal";
-import InventoryTwo from "./pages/InventoryTwo";
+//temp
+import Inventory from "./components/inventory-table/Inventory"
+
 
 
 
@@ -49,13 +51,13 @@ function App() {
   }, [filter]);
 
   return (
-    <div className="dark:bg-slate-100 min-h-screen ">
+    <div className="bg-slate-100 min-h-screen ">
       <Navbar />
       <Routes>
         <Route
           path="/"
           element={
-            <Inventory
+            <InventoryPage
               setShowModal={setShowModal}
               categoryFilter={filter}
               modalHandler={modalHandler}
@@ -68,7 +70,7 @@ function App() {
         <Route path="/logs" element={<Logs />} />
         <Route path="/inventory/:id" element={<SingleItemInfo />} />
         <Route path="/inventory/:barcode" element={<SingleBarcode />} />
-        <Route path="/inventoryTwo" element={<InventoryTwo />} />
+
         <Route
           path="/item-creation-successful"
           element={<ItemCreationSuccessful />}

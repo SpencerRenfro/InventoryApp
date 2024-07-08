@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CheckedOut() {
+function CheckedOut({checkedOut}) {
   return (
     <div className="flex">
     <p className="text-lg mr-5">Checked Out</p>
@@ -11,7 +11,7 @@ function CheckedOut() {
     >
       <circle cx={3} cy={3} r={3} />
     </svg>
-    <p className="self-center">{2}</p>
+    <p className="self-center">{checkedOut}</p>
   </div>
   )
 }

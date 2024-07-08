@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Inventory from "./Inventory";
+import Inventory from "./InventoryPage";
 import checkmarkPlain from "../assets/icons/checkmarkPlain.svg";
 
 function ItemCreationSuccessful() {
