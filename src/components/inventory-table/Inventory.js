@@ -8,6 +8,7 @@ import TotalAssetValue from "./TotalAssetValue";
 import Searchbar from "../Searchbar";
 import Table from "./Table";
 import FilterInventory from "./FilterInventory";
+import Pagination from "../../ui/pagination/Pagination";
 //icons
 import next from "../../assets/icons/next.svg";
 // import FilterInventory from "./FilterInventory";
@@ -88,7 +89,7 @@ function Inventory({
         Inventory
       </h1>
 
-      <div className="col-span-7">
+      <div className="col-span-7 mr-10">
         <Searchbar />
       </div>
       <FilterInventory filter={filter} setFilter={setFilter}  />
@@ -105,7 +106,9 @@ function Inventory({
           inventoryItems={inventoryItems}
           categoryFilter={filter}
         />
+        <Pagination />
       </div>
+
     </div>
   );
 }

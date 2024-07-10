@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import next from "../../assets/icons/next.svg";
 
-export default function FilterInventory({ filter, setFilter }) {
+export default function FilterLogs({ filter, setFilter }) {
 
   useEffect(() => {
     console.log('filter changed', filter);
@@ -16,6 +16,7 @@ export default function FilterInventory({ filter, setFilter }) {
             tabIndex={0}
             role="button"
             className="m-1"
+            onClick={() => console.log('change filter clicked')}
           >
             <img src={next} alt="chevron" width={25} className="rotate-90" />
           </div>

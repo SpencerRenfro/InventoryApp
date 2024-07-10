@@ -42,6 +42,21 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "c897",
+      "date": "07/08/2024",
+      "name": "TowTruck",
+      "category": "Transport",
+      "price": 20,
+      "serialNumber": "VIN:8675309",
+      "description": "Diesel Tow Truck",
+      "barcode": "756663036678",
+      "barcodeCombinedName": "756663036678_TowTruck",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "categories": [
@@ -74,160 +89,155 @@
       "name": "",
       "barcode": "023578846982",
       "barcodeCombinedName": "023578846982_Xbox"
+    },
+    {
+      "id": "38ef",
+      "name": "",
+      "barcode": "756663036678",
+      "barcodeCombinedName": "756663036678_TowTruck"
     }
   ],
   "itemLogs": [
     {
-      "id": "",
-      "name": "",
-      "actiion": ""
-    },
-    {
-      "id": "640920147580_LeMillion",
-      "name": "LeMillion",
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
       "action": "CREATED",
-      "date": "06/25/2024, 03:51:56 AM",
+      "date": "06/25/2024",
       "barcode": "079498404880"
     },
     {
-      "id": "094861889307_zxz",
-      "name": "zxz",
-      "action": "CREATED",
-      "date": "06/25/2024, 03:57:23 AM",
-      "barcode": "429234399834"
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404881"
     },
     {
-      "id": "915744922489_sdsd",
-      "name": "sdsd",
-      "action": "CREATED",
-      "date": "06/25/2024, 03:57:54 AM",
-      "barcode": "905993058027"
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404882"
     },
     {
-      "id": "976494752560_22",
-      "name": "22",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:14:03 PM",
-      "barcode": "125027356963"
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404883"
     },
     {
-      "id": "141211344783_dsf",
-      "name": "dsf",
+      "id": "60de_Drill",
+      "name": "Impact Drill",
       "action": "CREATED",
-      "date": "06/25/2024, 08:25:58 PM",
-      "barcode": "355256877181"
+      "date": "06/25/2024",
+      "barcode": "079498404884"
     },
     {
-      "id": "859042018329_sad",
-      "name": "sad",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:27:50 PM",
-      "barcode": "455781954672"
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404885"
     },
     {
-      "id": "859042018329_sad",
-      "name": "sad",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:27:50 PM",
-      "barcode": "455781954672"
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404886"
     },
     {
-      "id": "832301955511_1",
-      "name": "1",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:28:17 PM",
-      "barcode": "113575930695"
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404887"
     },
     {
-      "id": "832301955511_1",
-      "name": "1",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:28:17 PM",
-      "barcode": "113575930695"
-    },
-    {
-      "id": "800078660405_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:28:46 PM",
-      "barcode": "291114960621"
-    },
-    {
-      "id": "717025016142_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/26/2024, 12:26:43 AM",
-      "barcode": "049297539749"
-    },
-    {
-      "id": "940601228299_Book",
-      "name": "Book",
-      "action": "CREATED",
-      "date": "06/26/2024, 01:44:25 AM",
-      "barcode": "775814306493"
-    },
-    {
-      "id": "313218982460_Xbox",
+      "id": "2bdc_Xbox",
       "name": "Xbox",
       "action": "CREATED",
-      "date": "06/26/2024, 05:49:33 PM",
-      "barcode": "000795891431"
+      "date": "06/25/2024",
+      "barcode": "079498404888"
     },
     {
-      "id": "484484737988_pen",
-      "name": "pen",
-      "action": "CREATED",
-      "date": "06/27/2024, 12:14:21 AM",
-      "barcode": "010550075893"
-    },
-    {
-      "id": "614781573155_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:37:33 AM",
-      "barcode": "185018614172"
-    },
-    {
-      "id": "462685916565_coffe cup",
-      "name": "coffe cup",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:39:16 AM",
-      "barcode": "268580706861"
-    },
-    {
-      "id": "763802759488_new coffe cup",
-      "name": "new coffe cup",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:41:42 AM",
-      "barcode": "014243190796"
-    },
-    {
-      "id": "308648593802_1",
-      "name": "1",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:43:14 AM",
-      "barcode": "339329754478"
-    },
-    {
-      "id": "455284338073_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:44:06 AM",
-      "barcode": "328082810911"
-    },
-    {
-      "id": "059479987737_tea cup",
-      "name": "tea cup",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:44:40 AM",
-      "barcode": "740544620564"
-    },
-    {
-      "id": "184911347473_Xbox",
+      "id": "2bdc_Xbox",
       "name": "Xbox",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404889"
+    },
+    {
+      "id": "2bdc_Xbox",
+      "name": "Xbox",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404890"
+    },
+    {
+      "id": "2bdc_Xbox",
+      "name": "Xbox",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404891"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
       "action": "CREATED",
-      "date": "06/28/2024, 11:35:39 AM",
-      "barcode": "023578846982"
+      "date": "06/25/2024",
+      "barcode": "079498404892"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404893"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404894"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404895"
+    },
+    {
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
+      "action": "CREATED",
+      "date": "06/25/2024",
+      "barcode": "079498404896"
+    },
+    {
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404897"
+    },
+    {
+      "id": "2bdc_Xbox",
+      "name": "Xbox",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404898"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404899"
     }
   ]
+
 }

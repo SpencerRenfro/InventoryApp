@@ -11,6 +11,8 @@ import SingleItemInfo from "./pages/ItemInfo";
 import SingleBarcode from "./pages/SingleBarcode";
 import ItemCreationFailure from "./pages/ItemCreationFailure";
 import ItemCreationSuccessful from "./pages/ItemCreationSuccessful";
+import ItemManagement from "./pages/ItemManagement";
+import LogsTwo from "./components/logs/Logs";
 
 // Components
 import Navbar from "./ui/Navbar";
@@ -68,9 +70,10 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/check-in" element={<CheckIn />} />
         <Route path="/logs" element={<Logs />} />
+        <Route path="/logs-two" element={<LogsTwo />} />
         <Route path="/inventory/:id" element={<SingleItemInfo />} />
         <Route path="/inventory/:barcode" element={<SingleBarcode />} />
-
+        <Route path="/item-management" element={<ItemManagement />} />
         <Route
           path="/item-creation-successful"
           element={<ItemCreationSuccessful />}
