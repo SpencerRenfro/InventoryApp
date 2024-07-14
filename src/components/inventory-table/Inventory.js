@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+
 //components
 import Results from "./Results";
 import CheckedIn from "./CheckedIn";
@@ -14,12 +15,8 @@ import next from "../../assets/icons/next.svg";
 // import FilterInventory from "./FilterInventory";
 
 
-function Inventory({
-  inventoryItems,
-  setShowModal,
-  categoryFilter,
-  modalHandler,
-}) {
+function Inventory({inventoryItems, categoryItems}) {
+  //inventory data states
   const [totalAssetValue, setTotalAssetValue] = useState(0);
   const [checkedIn, setCheckedIn] = useState(0);
   const [checkedOut, setCheckedOut] = useState(0);
@@ -28,12 +25,11 @@ function Inventory({
   //for changing filter. This uses useState and a function to change the state. This function is passed to the FilterInventory component,
   // and the on change event is handling the value change.
   // "" is the default value for no filter
+
+  //useFetch for getting categories loaded in, filter state to update filtering
+
   const [filter, setFilter] = useState("");
 
-
-  useEffect(() => {
-    console.log('filter changed', filter);
-  }, [filter]);
 
   useEffect(() => {
     let totalPrice = 0;
@@ -41,6 +37,7 @@ function Inventory({
     let checkedInCount = 0;
     let checkedOutCount = 0;
     let categories = [""];
+
     if (filter === "") {
       inventoryItems.forEach((item) => {
         totalItems++;
@@ -92,8 +89,8 @@ function Inventory({
       <div className="col-span-7 mr-10">
         <Searchbar />
       </div>
-      <FilterInventory filter={filter} setFilter={setFilter}  />
-      <div className="col-span-12 -4 h-20">
+      <FilterInventory filter={filter} setFilter={setFilter} categories={categoryItems} />
+      <div className="col-span-12 h-20">
         <div className="flex gap-7">
           <Results itemCount={itemCount} />
           <CheckedIn checkedIn={checkedIn}/>

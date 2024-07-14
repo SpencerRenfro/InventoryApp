@@ -44,22 +44,13 @@ function Checkout() {
     isSubmitted
   );
   return (
-    <div className="w-full flex justify-center">
-      <div className="dark:bg-slate-700 w-1/3 mt-10 pb-20 mx-20 shadow-xl rounded-xl relative border-2 border-purple-500">
+    <div className="w-full flex justify-center mb-10 dark:bg-slate-900">
+      <div className=" w-1/3 mt-10 pb-20 mx-20 shadow-xl rounded-xl relative border-2">
         <div className="flex">
           <h1 className="col-span-12 text-3xl text-center mt-10 w-full dark:text-white">
             Sign Item Out
           </h1>
-          <div className="flex w-1/3 justify-end">
-            <img
-              src={checkout}
-              width={150}
-              height={150}
-              alt="cube"
-              className="absolute right-0 "
-            />
           </div>
-        </div>
         <form className="mx-20">
           <div className="flex flex-col w-full gap-5 items-start">
             <div className="w-full">
@@ -71,39 +62,39 @@ function Checkout() {
                 onChange={(date) => setStartDate(date)}
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full">
               <label>
                 <h2>First Name</h2>
               </label>
               <input
-                className="w-full border-2 border-purple-500 rounded-lg p-2"
+                className="w-full border-2 rounded-lg p-2"
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full">
               <label>
                 <h2>Last Name</h2>
               </label>
               <input
-                className="w-full border-2 border-purple-500 rounded-lg p-2"
+                className="w-full border-2 rounded-lg p-2"
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full">
               <label>
                 <h2>Phone Number</h2>
               </label>
               <input
-                className="w-full border-2 border-purple-500 rounded-lg p-2"
+                className="w-full border-2 rounded-lg p-2"
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full">
               <label>
                 <h2>Email</h2>
               </label>
               <input
-                className="w-full border-2 border-purple-500 rounded-lg p-2"
+                className="w-full border-2 rounded-lg p-2"
               />
             </div>
-            <div>
+            <div >
               <label>
                 <h2 className="font-bold dark:text-white">Scan Barcode</h2>
                 <ScanInput

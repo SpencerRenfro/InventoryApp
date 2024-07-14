@@ -13,6 +13,7 @@ import { CategoryContext } from "../reducers/CategoryContext";
 
 function InventoryPage(props) {
   const { data, isPending, error } = useFetch("http://localhost:8000/inventory");
+  const { data:categories } = useFetch("http://localhost:8000/categories")
   const category = useContext(CategoryContext);
 
   /*
@@ -23,6 +24,9 @@ function InventoryPage(props) {
   Inventory.js handles the mapping of the fetched data and has many sub functional components each handiling a different aspect of the inventory table
   */
   useEffect(() => {
+      console.log('CATSSS');
+      console.log('CATEGORIES', categories);
+
     if(data){
       console.log('DATA:', data)
 
@@ -48,7 +52,7 @@ function InventoryPage(props) {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {/* {data && <div><Table inventory={data} setShowModal={props.setShowModal}  categoryFilter={props.categoryFilter} modalHandler={props.modalHandler}/> </div>} */}
-      {data && <div><Inventory inventoryItems={data} setShowModal={props.setShowModal}   modalHandler={props.modalHandler}/> </div>}
+      {data && categories && <div><Inventory inventoryItems={data} categoryItems={categories} setShowModal={props.setShowModal}   modalHandler={props.modalHandler}/> </div>}
       {!data && !isPending && <InventorySkeleton />}
       {console.log('CATEGORY FROM USECONTEXT:', category)}
       {/* <InventorySkeleton /> */}

@@ -18,7 +18,20 @@ function Table({ logs }) {
                 <p className="font-medium">{item.id}</p>
               </td>
               <td className="col-span-3">
-                <p className="font-medium">{item.action}</p>
+                <p
+                  className={`w-1/2 text-center border rounded-lg
+                ${
+                  item.action === "CREATED"
+                    ? " border-blue-700"
+                    : item.action === "IN"
+                    ? "border-green-700"
+                    : item.action === "OUT"
+                    ? "border-red-700"
+                    : "border-slate-900"
+                }`}
+                >
+                  {item.action}
+                </p>
               </td>
               <td className="col-span-3">
                 <p className="font-medium">{item.date}</p>

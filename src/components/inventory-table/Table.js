@@ -40,7 +40,7 @@ function Table({ inventoryItems, categoryFilter }) {
                   <p className="font-medium">{item.price}</p>
                 </td>
                 <td className="py-2 col-span-2">
-                  <p className="font-medium">{item.id}</p>
+                  <p className="font-medium">{item.barcode}</p>
                 </td>
               </tr>
             ) : null
