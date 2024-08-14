@@ -207,6 +207,21 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "d0bd",
+      "date": "07/16/2024",
+      "name": "Fountain pen",
+      "category": "Pens",
+      "price": 100,
+      "serialNumber": "0050520",
+      "description": "Fountain pen with feather",
+      "barcode": "239846860540",
+      "barcodeCombinedName": "239846860540_Fountain pen",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "categories": [
@@ -245,22 +260,21 @@
       "name": "Organic Materials",
       "barcode": "943969238701",
       "barcodeCombinedName": "943969238701_Grass"
+    },
+    {
+      "id": "b33b",
+      "name": "Pens",
+      "barcode": "239846860540",
+      "barcodeCombinedName": "239846860540_Fountain pen"
     }
   ],
-  "itemLogs": [
+"itemLogs": [
     {
       "id": "4a1f_Beats",
       "name": "Beats By Dr. Dre",
       "action": "CREATED",
       "date": "06/25/2024",
       "barcode": "079498404880"
-    },
-    {
-      "id": "4a1f_Beats",
-      "name": "Beats By Dr. Dre",
-      "action": "IN",
-      "date": "06/26/2024",
-      "barcode": "079498404881"
     },
     {
       "id": "4a1f_Beats",
@@ -361,34 +375,6 @@
       "barcode": "079498404895"
     },
     {
-      "id": "4a1f_Beats",
-      "name": "Beats By Dr. Dre",
-      "action": "CREATED",
-      "date": "06/25/2024",
-      "barcode": "079498404896"
-    },
-    {
-      "id": "60de_Drill",
-      "name": "Impact Drill",
-      "action": "IN",
-      "date": "06/26/2024",
-      "barcode": "079498404897"
-    },
-    {
-      "id": "2bdc_Xbox",
-      "name": "Xbox",
-      "action": "OUT",
-      "date": "06/27/2024",
-      "barcode": "079498404898"
-    },
-    {
-      "id": "c897_TowTruck",
-      "name": "TowTruck",
-      "action": "DELETED",
-      "date": "06/28/2024",
-      "barcode": "079498404899"
-    },
-    {
       "id": "264247637115_Socket Wrench",
       "name": "Socket Wrench",
       "action": "CREATED",
@@ -457,6 +443,14 @@
       "action": "CREATED",
       "date": "07/13/2024",
       "barcode": "691500691878"
+    },
+    {
+      "id": "239846860540_Fountain pen",
+      "name": "Fountain pen",
+      "action": "CREATED",
+      "date": "07/16/2024",
+      "barcode": "239846860540"
     }
   ]
+
 }

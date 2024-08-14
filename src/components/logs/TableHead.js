@@ -3,28 +3,25 @@
 function TableHead() {
     return (
       <thead>
-      <tr className="grid grid-cols-12 col-span-12 text-black items-center">
+      <tr className="grid grid-cols-12 col-span-12 text-black items-center text-lg border-b-2 border-slate-200"
+      >
         <th
-          scope="col"
-          className="text-left font-semibold col-span-3 border-r-2 ml-2"
+          className="font-semibold col-span-3"
         >
           Name
         </th>
         <th
-          scope="col"
-          className="text-left font-semibold col-span-3 border-r-2 ml-5"
+          className="font-semibold col-span-3"
         >
           ID
         </th>
         <th
-          scope="col"
-          className="text-left font-semibold col-span-3 border-r-2 ml-5"
+          className="font-semibold col-span-3"
         >
           Action
         </th>
         <th
-          scope="col"
-          className="text-left font-semibold col-span-3 border-r-2 ml-5"
+          className="font-semibold col-span-3"
         >
           Action Date
         </th>

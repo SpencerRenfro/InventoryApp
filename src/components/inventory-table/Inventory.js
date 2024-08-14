@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 //components
 import Results from "./Results";
 import CheckedIn from "./CheckedIn";
@@ -10,12 +9,8 @@ import Searchbar from "../Searchbar";
 import Table from "./Table";
 import FilterInventory from "./FilterInventory";
 import Pagination from "../../ui/pagination/Pagination";
-//icons
-import next from "../../assets/icons/next.svg";
-// import FilterInventory from "./FilterInventory";
 
-
-function Inventory({inventoryItems, categoryItems}) {
+export default function Inventory({ inventoryItems, categoryItems }) {
   //inventory data states
   const [totalAssetValue, setTotalAssetValue] = useState(0);
   const [checkedIn, setCheckedIn] = useState(0);
@@ -25,18 +20,13 @@ function Inventory({inventoryItems, categoryItems}) {
   //for changing filter. This uses useState and a function to change the state. This function is passed to the FilterInventory component,
   // and the on change event is handling the value change.
   // "" is the default value for no filter
-
-  //useFetch for getting categories loaded in, filter state to update filtering
-
   const [filter, setFilter] = useState("");
-
 
   useEffect(() => {
     let totalPrice = 0;
     let totalItems = 0;
     let checkedInCount = 0;
     let checkedOutCount = 0;
-    let categories = [""];
 
     if (filter === "") {
       inventoryItems.forEach((item) => {
@@ -48,10 +38,6 @@ function Inventory({inventoryItems, categoryItems}) {
           checkedInCount++;
         } else if (item.status === "OUT") {
           checkedOutCount++;
-        }
-        if (item.category && !categories.includes(item.category)) {
-          categories.push(item.category);
-          console.log("categories:", categories);
         }
       });
     } else {
@@ -74,11 +60,7 @@ function Inventory({inventoryItems, categoryItems}) {
     setCheckedIn(checkedInCount);
     setCheckedOut(checkedOutCount);
     setItemCount(totalItems);
-    console.log('total price:', totalPrice);
-    console.log('checked in:', checkedInCount);
-    console.log('checked out:', checkedOutCount);
-    console.log('total items:', totalItems);
-  }, [inventoryItems, checkedIn, checkedOut, filter]);
+  }, [inventoryItems, filter]);
 
   return (
     <div className="grid grid-cols-12 mx-40 mt-10">
@@ -93,9 +75,9 @@ function Inventory({inventoryItems, categoryItems}) {
       <div className="col-span-12 h-20">
         <div className="flex gap-7">
           <Results itemCount={itemCount} />
-          <CheckedIn checkedIn={checkedIn}/>
-          <CheckedOut checkedOut={checkedOut}/>
-          <TotalAssetValue totalAssetValue={totalAssetValue}/>
+          <CheckedIn checkedIn={checkedIn} />
+          <CheckedOut checkedOut={checkedOut} />
+          <TotalAssetValue totalAssetValue={totalAssetValue} />
         </div>
       </div>
       <div className="col-span-12">
@@ -105,9 +87,8 @@ function Inventory({inventoryItems, categoryItems}) {
         />
         <Pagination />
       </div>
-
     </div>
   );
 }
 
-export default Inventory;
+

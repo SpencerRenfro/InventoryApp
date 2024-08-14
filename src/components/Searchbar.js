@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Searchbar() {
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit');
+    console.log("searchbar submited");
   };
 
   return (
     <div className="">
       <form onSubmit={handleSubmit} className="flex">
-        <div style={{ position: 'relative', width: '100%' }}>
+        <div className="relative w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             viewBox="-5.0 -10.0 110.0 135.0"
             style={{
-              position: 'absolute',
-              left: '10px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              pointerEvents: 'none',
-              width: '40px',
-              height: '40px',
+              position: "absolute",
+              left: "10px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              pointerEvents: "none",
+              width: "40px",
+              height: "40px",
             }}
           >
             <path
@@ -34,14 +34,11 @@ export default function Searchbar() {
             />
           </svg>
           <input
-            className="w-full rounded text-xl border py-4"
+            className="w-full rounded text-xl py-4 pl-11"
             type="text"
             id="search"
             onChange={(e) => setTerm(e.target.value)}
             placeholder="Search"
-            style={{
-              paddingLeft: '45px', // Adjust padding to make room for the image
-            }}
           />
         </div>
       </form>

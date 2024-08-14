@@ -3,7 +3,6 @@ import BarcodeGenerator from "../components/BarcodeGenerator";
 import { useFetch } from "../hooks/useFetch";
 import { useBarcodeGenerator } from "../hooks/useBarcodeGenerator";
 import { useNavigate } from "react-router-dom";
-import cube from "../assets/icons/cube.svg";
 import deleteIcon from "../assets/icons/delete.svg";
 
 export default function AddItem() {
@@ -156,13 +155,13 @@ export default function AddItem() {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="dark:bg-slate-700 w-1/3 my-10 mx-20 shadow-xl rounded-xl relative border-2">
+      <div className="dark:bg-slate-700 dark:text-slate-900 w-1/3 my-10 mx-20 shadow-xl rounded-xl relative border-2">
         <form className="mx-20 mt-10" onSubmit={handleSubmit}>
           <div className="flex flex-col w-full gap-5 items-start">
             <label className="w-full">
               <h2 className="font-bold dark:text-white">Item Name</h2>
               <input
-                className="w-full rounded-xl dark:text-white"
+                className="w-full rounded-xl "
                 type="text"
                 value={formData.name}
                 onChange={(e) =>
@@ -202,7 +201,7 @@ export default function AddItem() {
               <label className="w-full">
                 <h2 className="font-bold dark:text-white">Custom Category</h2>
                 <input
-                  className="w-full rounded-xl dark:text-white dark:focus:border-2 dark:focus"
+                  className="w-full rounded-xl  dark:focus:border-2 dark:focus"
                   type="text"
                   onChange={(e) =>
                     setFormData({
@@ -227,7 +226,7 @@ export default function AddItem() {
             <label className="w-full">
               <h2 className="font-bold dark:text-white">Item Price</h2>
               <input
-                className="w-full rounded-xl dark:text-white  dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
+                className="w-full rounded-xl  dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
                 type="text"
                 onChange={(e) =>
                   setFormData({
@@ -255,7 +254,7 @@ export default function AddItem() {
             <label className="w-full">
               <h2 className="font-bold dark:text-white">Item Description</h2>
               <input
-                className="w-full rounded-xl dark:text-slate-100"
+                className="w-full rounded-xl"
                 type="text"
                 onChange={(e) =>
                   setFormData({
@@ -269,13 +268,13 @@ export default function AddItem() {
               <h2 className="font-bold dark:text-white">Add Items to Collection</h2>
               <div className="w-full flex flex-row gap-2">
                 <input
-                  className="w-4/5 rounded-xl dark:text-slate-100 dark:focus:ring-purple-200 dark:focus:border-2 dark:focus"
+                  className="w-4/5 rounded-xl "
                   type="text"
                   value={tempItem}
                   onChange={(e) => setTempItem(e.target.value)}
                 />
                 <button
-                  className="w-1/5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   type="button"
                   onClick={addTempItem}
                 >
@@ -301,7 +300,7 @@ export default function AddItem() {
           </div>
           <div className="flex justify-end mt-5">
             <button
-              className="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              className="text-white dark:text-black bg-slate-700 dark:bg-slate-200 hover:bg-slate-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
               type="submit"
             >
               Submit

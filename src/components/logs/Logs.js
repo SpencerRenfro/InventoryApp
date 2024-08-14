@@ -1,4 +1,5 @@
 //hooks
+import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 
 //components
@@ -9,7 +10,22 @@ import Table from "./Table";
 import Pagination from "../../ui/pagination/Pagination";
 
 export default function LogsTwo() {
+  const [logResults, setLogResults] = useState([]);
   const { data:logs, isPending, error } = useFetch('http://localhost:8000/itemLogs');
+  const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    if (logs) {
+
+      if(filter === ""){
+        setLogResults(logs.length);
+        return;
+      } else {
+        let filteredLogs = logs.filter((item) => item.action === filter);
+        setLogResults(filteredLogs.length);
+      }
+    }
+  }, [logs, filter]);
   return (
     <div>
     <div className="grid grid-cols-12 mx-40 mt-10">
@@ -19,10 +35,10 @@ export default function LogsTwo() {
       <div className="col-span-7 mr-10">
         <Searchbar />
       </div>
-      <FilterLogs />
+      <FilterLogs filter={filter} setFilter={setFilter}/>
       <div className="col-span-12 -4 h-20">
         <div className="flex gap-7">
-          <Results />
+          <Results itemCount={logResults} />
         </div>
       </div>
       {isPending && <div>Loading...</div>}
@@ -31,7 +47,7 @@ export default function LogsTwo() {
 
       {logs && (
         <div className="col-span-12">
-      <Table logs={logs} />
+      <Table logs={logs} filter={filter}/>
       <Pagination />
       </div>
       )}

@@ -6,7 +6,6 @@ import AddItem from "./pages/AddItem";
 import Checkout from "./pages/Checkout";
 import InventoryPage from "./pages/InventoryPage";
 import CheckIn from "./pages/CheckIn";
-import Logs from "./pages/Logs";
 import SingleItemInfo from "./pages/ItemInfo";
 import SingleBarcode from "./pages/SingleBarcode";
 import ItemCreationFailure from "./pages/ItemCreationFailure";
@@ -19,8 +18,7 @@ import Navbar from "./ui/Navbar";
 import Modal from "./ui/modal/Modal";
 import FilterModal from "./ui/modal/FilterModal";
 import StatisticsModal from "./ui/modal/StatisticsModal";
-//temp
-import Inventory from "./components/inventory-table/Inventory"
+
 
 
 
@@ -69,8 +67,7 @@ function App() {
         <Route path="/add-item" element={<AddItem />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/check-in" element={<CheckIn />} />
-        <Route path="/logs" element={<Logs />} />
-        <Route path="/logs-two" element={<LogsTwo />} />
+        <Route path="/logs" element={<LogsTwo />} />
         <Route path="/inventory/:id" element={<SingleItemInfo />} />
         <Route path="/inventory/:barcode" element={<SingleBarcode />} />
         <Route path="/item-management" element={<ItemManagement />} />

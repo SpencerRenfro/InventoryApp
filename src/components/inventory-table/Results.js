@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Results({itemCount}) {
+export default function Results({itemCount}) {
   return (
     <div className='flex items-center text-lg'>
         {itemCount} Results
@@ -8,4 +8,3 @@ function Results({itemCount}) {
   )
 }
 
-export default Results

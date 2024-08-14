@@ -54,14 +54,14 @@ export default function Example() {
       </div>
       <div>
         <NavLink
-          to="/logs-two"
+          to="/logs"
           className={({ isActive }) =>
             isActive
               ? "inline-flex items-center border-b-2 border-purple-500 px-1 pt-1 text-2xl semibold mx-10"
               : "inline-flex items-center border-b-2 px-1 pt-1  text-2xl semibold mx-10"
           }
         >
-          Logs New
+          Logs
         </NavLink>
       </div>
     </div>

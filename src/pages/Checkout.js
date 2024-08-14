@@ -44,10 +44,10 @@ function Checkout() {
     isSubmitted
   );
   return (
-    <div className="w-full flex justify-center mb-10 dark:bg-slate-900">
+    <div className="w-full flex justify-center mb-10">
       <div className=" w-1/3 mt-10 pb-20 mx-20 shadow-xl rounded-xl relative border-2">
         <div className="flex">
-          <h1 className="col-span-12 text-3xl text-center mt-10 w-full dark:text-white">
+          <h1 className="col-span-12 text-3xl text-center mt-10 w-full ">
             Sign Item Out
           </h1>
           </div>
@@ -55,7 +55,7 @@ function Checkout() {
           <div className="flex flex-col w-full gap-5 items-start">
             <div className="w-full">
               <label>
-                <h2 className="font-bold dark:text-white">Date</h2>
+                <h2 className="font-bold">Date</h2>
               </label>
               <DatePicker
                 selected={startDate}
@@ -96,7 +96,7 @@ function Checkout() {
             </div>
             <div >
               <label>
-                <h2 className="font-bold dark:text-white">Scan Barcode</h2>
+                <h2>Scan Barcode</h2>
                 <ScanInput
                   handleChange={handleChange}
                   handleSubmit={handleScannerSubmit}

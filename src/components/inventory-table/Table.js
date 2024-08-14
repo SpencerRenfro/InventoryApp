@@ -1,10 +1,11 @@
+import { NavLink } from "react-router-dom";
+
 //components
 import TableHead from "./TableHead";
 
 
 
-
-function Table({ inventoryItems, categoryFilter }) {
+export default function Table({ inventoryItems, categoryFilter }) {
   return (
     <div>
       <table className="table min-w-full text-black">
@@ -13,7 +14,8 @@ function Table({ inventoryItems, categoryFilter }) {
           {inventoryItems.map((item) =>
             categoryFilter === "" || item.category === categoryFilter ? (
               <tr
-                className="grid  grid-cols-12 col-span-12 items-center py-8"
+                className="grid grid-cols-12 col-span-12  py-4 border-b-2 border-slate-200 cursor-pointer"
+
                 key={item.id}
               >
                 <td className="col-span-2">
@@ -22,35 +24,33 @@ function Table({ inventoryItems, categoryFilter }) {
                 <td className="col-span-2">
                   <p className="font-medium">{item.description}</p>
                 </td>
-                <td className="col-span-2 ">
+                <td className="col-span-2">
                   <p className="font-medium">{item.category}</p>
                 </td>
-                <td className="col-span-2 ">
+                <td className="col-span-2">
                 {item.status === "IN" ? (
-                  <span className="box-border w-10  rounded-full px-3  py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                    IN
-                  </span>
+
+                  <div className="badge badge-success badge-outline badge-lg w-14">IN</div>
+
                 ) : (
-                  <span className="box-border w-10 rounded-full px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">
-                    OUT
-                  </span>
+                  <div className="badge badge-error badge-outline badge-lg w-14">OUT</div>
                 )}
                 </td>
-                <td className="py-2 col-span-2">
+                <td className="col-span-2">
                   <p className="font-medium">{item.price}</p>
                 </td>
-                <td className="py-2 col-span-2">
+                <td className="col-span-2">
                   <p className="font-medium">{item.barcode}</p>
+                </td>
+                <td>
+                <NavLink to={`/inventory/${item.id}`}>Edit</NavLink>
                 </td>
               </tr>
             ) : null
           )}
         </tbody>
       </table>
-
-
     </div>
   );
 }
 
-export default Table;

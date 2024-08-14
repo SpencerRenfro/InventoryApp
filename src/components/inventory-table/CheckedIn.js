@@ -1,6 +1,6 @@
 import React from "react";
 
-function CheckedIn({checkedIn}) {
+export default function CheckedIn({checkedIn}) {
   return (
     <div className="flex">
     <p className="text-lg mr-5">Checked In</p>
@@ -16,4 +16,4 @@ function CheckedIn({checkedIn}) {
   );
 }
 
-export default CheckedIn;
+
