@@ -38,7 +38,7 @@ function ItemFoundCard(props) {
       </div>
       <div className="card-actions justify-end">
         <button className={`btn ${props.status === "OUT" ? 'hidden' : ''}`}>Sign out</button>
-        <button className={`btn ${props.status === "IN" ? 'hidden' : ''}`}>Sign In</button>
+        <button className={`btn ${props.status === "IN" ? 'hidden' : ''}`}  onClick={props.handleSignIn}>Sign In</button>
       </div>
     </div>
   </div>

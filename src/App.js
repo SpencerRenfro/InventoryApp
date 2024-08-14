@@ -4,19 +4,24 @@ import { Routes, Route } from "react-router-dom";
 // Pages
 import AddItem from "./pages/AddItem";
 import Checkout from "./pages/Checkout";
-import Inventory from "./pages/Inventory";
+import InventoryPage from "./pages/InventoryPage";
 import CheckIn from "./pages/CheckIn";
-import Logs from "./pages/Logs";
 import SingleItemInfo from "./pages/ItemInfo";
 import SingleBarcode from "./pages/SingleBarcode";
 import ItemCreationFailure from "./pages/ItemCreationFailure";
 import ItemCreationSuccessful from "./pages/ItemCreationSuccessful";
+import ItemManagement from "./pages/ItemManagement";
+import LogsTwo from "./components/logs/Logs";
 
 // Components
 import Navbar from "./ui/Navbar";
 import Modal from "./ui/modal/Modal";
 import FilterModal from "./ui/modal/FilterModal";
 import StatisticsModal from "./ui/modal/StatisticsModal";
+
+
+
+
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -46,13 +51,13 @@ function App() {
   }, [filter]);
 
   return (
-    <div className="dark:bg-slate-900 min-h-screen ">
+    <div className="bg-slate-100 min-h-screen ">
       <Navbar />
       <Routes>
         <Route
           path="/"
           element={
-            <Inventory
+            <InventoryPage
               setShowModal={setShowModal}
               categoryFilter={filter}
               modalHandler={modalHandler}
@@ -62,9 +67,10 @@ function App() {
         <Route path="/add-item" element={<AddItem />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/check-in" element={<CheckIn />} />
-        <Route path="/logs" element={<Logs />} />
+        <Route path="/logs" element={<LogsTwo />} />
         <Route path="/inventory/:id" element={<SingleItemInfo />} />
         <Route path="/inventory/:barcode" element={<SingleBarcode />} />
+        <Route path="/item-management" element={<ItemManagement />} />
         <Route
           path="/item-creation-successful"
           element={<ItemCreationSuccessful />}
