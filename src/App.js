@@ -8,8 +8,8 @@ import InventoryPage from "./pages/InventoryPage";
 import CheckIn from "./pages/CheckIn";
 import SingleItemInfo from "./pages/ItemInfo";
 import SingleBarcode from "./pages/SingleBarcode";
-import ItemCreationFailure from "./pages/ItemCreationFailure";
-import ItemCreationSuccessful from "./pages/ItemCreationSuccessful";
+import ItemCreationFailure from "./pages/crud_pages/ItemCreationFailure";
+import ItemCreationSuccessful from "./pages/crud_pages/ItemCreationSuccessful";
 import ItemManagement from "./pages/ItemManagement";
 import LogsTwo from "./components/logs/Logs";
 

@@ -1,42 +1,33 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import bwipjs from 'bwip-js';
 
-const BarcodeGenerator = (props) => {
-  const [barcodeData, setBarcodeData] = useState('');
-  const [barcodeImage, setBarcodeImage] = useState(null);
+const BarcodeGenerator = ({ barcodeState }) => {
   const canvasRef = useRef(null);
 
+  useEffect(() => {
+    if (barcodeState) {
+      generateBarcode(barcodeState);
+    }
+  }, [barcodeState]); // Trigger when barcodeState changes
 
-  const generateBarcode = (props) => {
+  const generateBarcode = (barcodeText) => {
     try {
-        bwipjs.toCanvas('mycanvas', {
-          bcid: 'code128', // Barcode type
-          text: props.barcode, // Text to encode
-          scale: 3, // 3x scaling factor
-          height: 10, // Bar height, in millimeters
-          includetext: true, // Show human-readable text
-          textxalign: 'center', // Text alignment
-        });
-        const dataUrl = canvasRef.current.toDataURL();
-        console.log('dataUrl fromBARCIO', dataUrl);
-      } catch (e) {
-        console.error(e);
-      }
+      bwipjs.toCanvas(canvasRef.current, {
+        bcid: 'code128', // Barcode type
+        text: barcodeText, // Text to encode
+        scale: 3, // 3x scaling factor
+        height: 10, // Bar height, in millimeters
+        includetext: true, // Show human-readable text
+        textxalign: 'center', // Text alignment
+      });
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
     <div>
-      {/* <h2>Barcode Generator</h2>
-      <input
-        type="text"
-        value={barcodeData}
-        onChange={(e) => setBarcodeData(e.target.value)}
-        placeholder="Enter data for barcode"
-      /> */}
-      {/* <button onClick={generateBarcode}>Generate Barcode</button> */}
-
-
-      <canvas id="mycanvas"></canvas>
+      <canvas ref={canvasRef} />
     </div>
   );
 };
