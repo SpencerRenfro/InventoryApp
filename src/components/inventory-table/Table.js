@@ -12,7 +12,7 @@ export default function Table({ inventoryItems, categoryFilter }) {
         <TableHead />
         <tbody>
           {inventoryItems.map((item) =>
-            categoryFilter === "" || item.category === categoryFilter ? (
+            categoryFilter === "" || item.category === categoryFilter || item.status === categoryFilter ? (
               <tr
                 className="grid grid-cols-12 col-span-12  py-4 border-b-2 border-slate-200 cursor-pointer"
 

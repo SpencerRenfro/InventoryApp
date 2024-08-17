@@ -1,26 +1,34 @@
 {
   "inventory": [
     {
-      "name": "JBL_Stereo",
-      "description": "Beats By Dr. Dre",
-      "category": "Electronics",
-      "status": "IN",
       "id": "4a1f",
+      "date": "06/28/2024, 11:35:39 AM",
+      "name": "JBL_Stereo",
+      "category": "Electronics",
+      "price": 150,
+      "serialNumber": "N/A",
+      "description": "Beats By Dr. Dre",
+      "barcode": " 161964567241",
+      "barcodeCombinedName": "161964567241_JBL_Stereo",
       "itemCollection": [],
-      "price": "150"
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "OUT"
     },
     {
       "id": "60de",
+      "date": "06/28/2024, 11:35:39 AM",
       "name": "Impact Drill",
       "category": "Tools",
       "price": 150,
+      "serialNumber": "N/A",
       "description": "Dewalt 30Amp",
       "barcode": "228081559021",
       "barcodeCombinedName": "228081559021_Impact Drill",
       "itemCollection": [],
       "barcodeUrl": "",
       "qrCode": "",
-      "status": "OUT"
+      "status": "IN"
     },
     {
       "id": "2bdc",

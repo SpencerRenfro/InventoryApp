@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import Modal from "../../ui/modal/Modal";
 import Inventory from "../InventoryPage";
 
 export default function ItemCreationFailure() {
@@ -33,7 +32,6 @@ export default function ItemCreationFailure() {
           </svg>
         </div>
         <div className="col-span-12 justify-items-center">
-          {/* <Modal /> */}
         </div>
         <div className="col-span-12 justify-items-center">
           <div className="grid justify-items-center">

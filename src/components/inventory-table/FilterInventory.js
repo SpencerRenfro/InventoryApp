@@ -33,13 +33,13 @@ export default function FilterInventory({ filter, setFilter, categories }) {
             ) : (
               <li>No categories available</li>
             )}
-            <li onClick={() => setFilter("IN")} className="cursor-pointer">
+            <li key={"IN"} onClick={() => setFilter("IN")} className="cursor-pointer">
               Items In
             </li>
-            <li onClick={() => setFilter("OUT")} className="cursor-pointer">
+            <li key={"OUT"} onClick={() => setFilter("OUT")} className="cursor-pointer">
               Items Out
             </li>
-            <li onClick={() => setFilter("")} className="cursor-pointer">
+            <li key={"NO_FILTER"} onClick={() => setFilter("")} className="cursor-pointer">
               No Filter
             </li>
           </ul>

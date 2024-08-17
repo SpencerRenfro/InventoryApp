@@ -330,8 +330,8 @@ export default function AddItem() {
         <div className="w-full flex flex-col items-center mt-5 pb-2">
           <BarcodeGenerator
             barcodeState={barcodeState}
-            setBarcodeState={setBarcodeState}
-            barcodeObject={barcodeObject}
+            // setBarcodeState={setBarcodeState}
+            // barcodeObject={barcodeObject}
           />
         </div>
       </div>
