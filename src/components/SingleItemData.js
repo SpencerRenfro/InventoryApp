@@ -103,16 +103,16 @@ function SingleItemData() {
         <span className="loading loading-spinner loading-lg"></span>
       ) : (
         item && (
-          <form onSubmit={handleSubmit} className="w-1/3 mt-10">
-            <div className="card bg-primary text-primary-content">
-              <div className="card-body">
+          <form onSubmit={handleSubmit} className="w-1/3 mt-10 ">
+            <div className="card border shadow-lg ">
+              <div className="card-body ">
                 <div className="form-group">
                   <label className="font-bold">Name:</label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full bg-inherit"
                     required
                   />
                 </div>
@@ -121,7 +121,7 @@ function SingleItemData() {
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="textarea textarea-bordered w-full"
+                    className="textarea textarea-bordered w-full bg-inherit"
                     required
                   />
                 </div>
@@ -131,7 +131,7 @@ function SingleItemData() {
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full bg-inherit"
                     required
                   />
                 </div>
@@ -141,7 +141,7 @@ function SingleItemData() {
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full bg-inherit"
                     required
                   />
                 </div>
@@ -174,20 +174,22 @@ function SingleItemData() {
                   <select
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
-                    className="select select-bordered w-full"
+                    className="select select-bordered w-full bg-inherit"
                     required
                   >
                     <option value="IN">IN</option>
                     <option value="OUT">OUT</option>
                   </select>
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary mt-6"
-                  disabled={putIsPending}
-                >
-                Update Item
-                </button>
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="btn btn-outline mt-6 flex "
+                    disabled={putIsPending}
+                  >
+                  Update Item
+                  </button>
+                </div>
               </div>
               <div className="flex justify-center my-2 mb-5">
                 <BarcodeGenerator barcodeState={barcodeState} />
