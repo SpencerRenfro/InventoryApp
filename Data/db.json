@@ -2,31 +2,33 @@
   "inventory": [
     {
       "id": "4a1f",
-      "name": "Stereo",
+      "date": "06/28/2024, 11:35:39 AM",
+      "name": "JBL_Stereo",
       "category": "Electronics",
-      "price": 300,
+      "price": 150,
+      "serialNumber": "N/A",
       "description": "Beats By Dr. Dre",
-      "barcode": "847284097363",
-      "barcodeCombinedName": "847284097363_Stereo",
-      "itemCollection": [
-        "aux cord"
-      ],
+      "barcode": " 161964567241",
+      "barcodeCombinedName": "161964567241_JBL_Stereo",
+      "itemCollection": [],
       "barcodeUrl": "",
       "qrCode": "",
-      "status": "OUT"
+      "status": "IN"
     },
     {
       "id": "60de",
+      "date": "06/28/2024, 11:35:39 AM",
       "name": "Impact Drill",
       "category": "Tools",
       "price": 150,
+      "serialNumber": "N/A",
       "description": "Dewalt 30Amp",
       "barcode": "228081559021",
       "barcodeCombinedName": "228081559021_Impact Drill",
       "itemCollection": [],
       "barcodeUrl": "",
       "qrCode": "",
-      "status": "IN"
+      "status": "OUT"
     },
     {
       "id": "2bdc",
@@ -83,7 +85,11 @@
       "description": "",
       "barcode": "793423873495",
       "barcodeCombinedName": "793423873495_PLayStation 5",
-      "itemCollection": [],
+      "itemCollection": [
+        "playstation controller",
+        "playstation controller",
+        "playstation controller"
+      ],
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
@@ -222,6 +228,21 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "a231",
+      "date": "07/08/2024",
+      "name": "Car-Alignment-tool",
+      "category": "Tools",
+      "price": 50,
+      "serialNumber": "VIN:8675309",
+      "description": "Car allignment tool that attaches to rotor",
+      "barcode": "435431235458",
+      "barcodeCombinedName": "435431235458_Car-Alignment-tool",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "categories": [
@@ -268,7 +289,7 @@
       "barcodeCombinedName": "239846860540_Fountain pen"
     }
   ],
-"itemLogs": [
+  "itemLogs": [
     {
       "id": "4a1f_Beats",
       "name": "Beats By Dr. Dre",
@@ -452,5 +473,4 @@
       "barcode": "239846860540"
     }
   ]
-
 }

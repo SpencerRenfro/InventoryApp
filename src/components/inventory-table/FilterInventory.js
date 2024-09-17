@@ -1,50 +1,34 @@
-import { useEffect } from "react";
-import next from "../../assets/icons/next.svg";
-
 export default function FilterInventory({ filter, setFilter, categories }) {
-
-  useEffect(() => {
-    console.log('filter changed', filter);
-  }, [filter]);
+  // Handle change event for the select element
+  const handleChange = (event) => {
+    setFilter(event.target.value);
+  };
 
   return (
-    <div>
-      <div className="flex items-center">
-        <h2 className="font-bold text-xl text-black">Filter By</h2>
-        <div className="dropdown dropdown-right">
-          <div
-            tabIndex={0}
-            role="button"
-            className="m-1"
-          >
-            <img src={next} alt="chevron" width={25} className="rotate-90" />
-          </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu rounded-box z-[1] w-52 p-2 shadow bg-white gap-2 "
-          >
-            {categories && categories.length > 0 ? (
-              categories.map((item) => (
-                <li key={item.id} onClick={() => setFilter(item.name)} className="cursor-pointer">
-                  {item.name}
-                </li>
-              ))
-
-            ) : (
-              <li>No categories available</li>
-            )}
-            <li onClick={() => setFilter("IN")} className="cursor-pointer">
-              Items In
-            </li>
-            <li onClick={() => setFilter("OUT")} className="cursor-pointer">
-              Items Out
-            </li>
-            <li onClick={() => setFilter("")} className="cursor-pointer">
-              No Filter
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div className="col-span-2 flex items-center">
+      <select
+        className="select w-full max-w-xs text-xl"
+        onChange={handleChange} // Use onChange event handler
+        value={filter} // Set the value to the current filter
+      >
+        <option value="" disabled> {/* Empty value for the placeholder option */}
+          Filter By
+        </option>
+        {categories && categories.length > 0 ? (
+          categories.map((item) => (
+            <option key={item.id} value={item.name}>
+              {item.name}
+            </option>
+          ))
+        ) : (
+          <option value="">No categories available</option> // Use option instead of li
+        )}
+        <option value="IN">Items In</option>
+        <option value="OUT">Items Out</option>
+        <option value="">No Filter</option>
+      </select>
     </div>
   );
 }
+
+

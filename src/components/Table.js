@@ -9,8 +9,7 @@ import educationIcon from "../assets/icons/education.svg";
 import toolIcon from "../assets/icons/power_tool.svg";
 import rawIcon from "../assets/icons/raw_material.svg";
 import otherIcon from "../assets/icons/other.svg";
-import next from "../assets/icons/next.svg";
-import back from "../assets/icons/back.svg";
+
 //React Icon Button Components
 import FilterIcon from "../ui/icons/FilterIcon";
 import StatisticsIcon from "../ui/icons/StatisticsIcon";

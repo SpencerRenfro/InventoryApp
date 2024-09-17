@@ -26,10 +26,13 @@ export default function AddItem() {
   const {
     postData: postCategoryData,
     data: categorySubmission,
-    error: categoryError
+    error: categoryError,
   } = useFetch("http://localhost:8000/categories", "POST");
 
-  const { data: categories, error: categoriesError } = useFetch("http://localhost:8000/categories", "GET");
+  const { data: categories, error: categoriesError } = useFetch(
+    "http://localhost:8000/categories",
+    "GET"
+  );
 
   const [formData, setFormData] = useState({
     date: "",
@@ -79,7 +82,11 @@ export default function AddItem() {
     postInventoryData(formData);
     postLogsData(logsDataForm);
 
-    if (customCategory && formData.category && !isDuplicateCategory(formData.category)) {
+    if (
+      customCategory &&
+      formData.category &&
+      !isDuplicateCategory(formData.category)
+    ) {
       postCategoryData(categoriesDataForm);
     }
   };
@@ -112,7 +119,7 @@ export default function AddItem() {
     let today = new Date().toLocaleDateString(undefined, {
       day: "2-digit",
       month: "2-digit",
-      year: "numeric"
+      year: "numeric",
     });
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -133,14 +140,15 @@ export default function AddItem() {
       barcode: barcodeState,
       barcodeCombinedName: `${barcodeState}_${formData.name}`,
     }));
-  }, [formData.name, barcodeState]);
+  }, [formData.name, barcodeState, formData.category]);
+  //added formData.caetegory to dependancy array
 
   useEffect(() => {
     if (categorySubmission) {
-      console.log('Category Submitted');
+      console.log("Category Submitted");
     }
     if (categoryError) {
-      console.log('Category Error:', categoryError);
+      console.log("Category Error:", categoryError);
     }
     if (inventoryData && logsData) {
       navigate("/item-creation-successful");
@@ -155,7 +163,7 @@ export default function AddItem() {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="dark:bg-slate-700 dark:text-slate-900 w-1/3 my-10 mx-20 shadow-xl rounded-xl relative border-2">
+      <div className=" dark:text-slate-900 w-1/3 my-10 mx-20 shadow-xl rounded-xl relative border-2">
         <form className="mx-20 mt-10" onSubmit={handleSubmit}>
           <div className="flex flex-col w-full gap-5 items-start">
             <label className="w-full">
@@ -192,9 +200,16 @@ export default function AddItem() {
                   }
                   required
                 >
-                  {categories && categories.map(category => (
-                    <option  style={{ backgroundColor: '#cbd5e1' }}  value={category.name} key={category.id}>{category.name}</option>
-                  ))}
+                  {categories &&
+                    categories.map((category) => (
+                      <option
+                        style={{ backgroundColor: "#cbd5e1" }}
+                        value={category.name}
+                        key={category.id}
+                      >
+                        {category.name}
+                      </option>
+                    ))}
                 </select>
               </div>
             ) : (
@@ -265,7 +280,9 @@ export default function AddItem() {
               />
             </label>
             <div className="w-full flex flex-col gap-2">
-              <h2 className="font-bold dark:text-white">Add Items to Collection</h2>
+              <h2 className="font-bold dark:text-white">
+                Add Items to Collection
+              </h2>
               <div className="w-full flex flex-row gap-2">
                 <input
                   className="w-4/5 rounded-xl "
@@ -284,7 +301,10 @@ export default function AddItem() {
               <div>
                 <ul className="dark:text-white">
                   {formData.itemCollection.map((item, index) => (
-                    <li key={index} className="flex items-center justify-between">
+                    <li
+                      key={index}
+                      className="flex items-center justify-between"
+                    >
                       {item}
                       <button
                         className="ml-4 text-red-600"
@@ -307,12 +327,11 @@ export default function AddItem() {
             </button>
           </div>
         </form>
-        <div className="w-full flex flex-col items-center mt-5">
-          <canvas ref={canvasRef} />
+        <div className="w-full flex flex-col items-center mt-5 pb-2">
           <BarcodeGenerator
             barcodeState={barcodeState}
-            setBarcodeState={setBarcodeState}
-            barcodeObject={barcodeObject}
+            // setBarcodeState={setBarcodeState}
+            // barcodeObject={barcodeObject}
           />
         </div>
       </div>

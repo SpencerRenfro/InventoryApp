@@ -40,7 +40,23 @@ export default function Inventory({ inventoryItems, categoryItems }) {
           checkedOutCount++;
         }
       });
-    } else {
+    } else if(filter === "IN" || "OUT"){
+      let filteredItems = inventoryItems.filter(
+        (item) => item.status === filter
+      );
+      filteredItems.forEach((item) => {
+        totalItems++;
+        if (!isNaN(parseFloat(item.price))) {
+          totalPrice += parseFloat(item.price);
+        }
+        if (item.status === "IN") {
+          checkedInCount++;
+        } else if (item.status === "OUT") {
+          checkedOutCount++;
+        }
+      });
+    }
+    else {
       let filteredItems = inventoryItems.filter(
         (item) => item.category === filter
       );

@@ -1,5 +1,6 @@
-import React from "react";
-import Modal from "../ui/modal/Modal";
+import { Link } from "react-router-dom";
+
+import Inventory from "../InventoryPage";
 
 export default function ItemCreationFailure() {
   return (
@@ -31,7 +32,13 @@ export default function ItemCreationFailure() {
           </svg>
         </div>
         <div className="col-span-12 justify-items-center">
-          <Modal />
+        </div>
+        <div className="col-span-12 justify-items-center">
+          <div className="grid justify-items-center">
+            <Link to="/" element={<Inventory />}>
+              <button className="btn w-48">Close</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
