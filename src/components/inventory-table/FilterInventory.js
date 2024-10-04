@@ -2,12 +2,14 @@ export default function FilterInventory({ filter, setFilter, categories }) {
   // Handle change event for the select element
   const handleChange = (event) => {
     setFilter(event.target.value);
+    console.log('Filter:', event.target.value, 'Type:', typeof event.target.value);
+
   };
 
   return (
-    <div className="col-span-2 flex items-center">
+    <div className="flex items-center">
       <select
-        className="select w-full max-w-xs text-xl"
+        className="select w-full "
         onChange={handleChange} // Use onChange event handler
         value={filter} // Set the value to the current filter
       >
@@ -21,11 +23,11 @@ export default function FilterInventory({ filter, setFilter, categories }) {
             </option>
           ))
         ) : (
-          <option value="">No categories available</option> // Use option instead of li
+          <option value="">No categories available</option> 
         )}
         <option value="IN">Items In</option>
         <option value="OUT">Items Out</option>
-        <option value="">No Filter</option>
+        <option value="">Show All</option>
       </select>
     </div>
   );

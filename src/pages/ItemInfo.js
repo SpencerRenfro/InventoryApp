@@ -1,4 +1,4 @@
-import SingleItemData from '../components/SingleItemData'
+import SingleItemData from './SingleItemData'
 
 function ItemInfo() {
   return (

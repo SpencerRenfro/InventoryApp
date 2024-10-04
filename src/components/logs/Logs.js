@@ -28,7 +28,7 @@ export default function LogsTwo() {
   }, [logs, filter]);
   return (
     <div>
-    <div className="grid grid-cols-12 mx-40 mt-10">
+    <div className="grid grid-cols-12 mx-10 lg:mx-40 mt-10">
       <h1 className="col-start-1 col-span-12 font-bold text-3xl text-black my-10">
         Logs
       </h1>

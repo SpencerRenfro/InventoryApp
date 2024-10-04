@@ -2,104 +2,148 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Pages
+import EditItem from "./pages/EditItem";
 import AddItem from "./pages/AddItem";
 import Checkout from "./pages/Checkout";
 import InventoryPage from "./pages/InventoryPage";
 import CheckIn from "./pages/CheckIn";
 import SingleItemInfo from "./pages/ItemInfo";
-import SingleBarcode from "./pages/SingleBarcode";
-import ItemCreationFailure from "./pages/crud_pages/ItemCreationFailure";
-import ItemCreationSuccessful from "./pages/crud_pages/ItemCreationSuccessful";
+// import ItemCreationFailure from "./pages/crud_pages/ItemCreationFailure";
 import ItemManagement from "./pages/ItemManagement";
 import LogsTwo from "./components/logs/Logs";
 
 // Components
 import Navbar from "./ui/Navbar";
-import Modal from "./ui/modal/Modal";
-import FilterModal from "./ui/modal/FilterModal";
-import StatisticsModal from "./ui/modal/StatisticsModal";
-
-
-
-
+import Banner from "./components/Banner";
+// Banner Components
+import BannerSuccess from "./components/crud_banners/BannerSuccess";
+import BannerFailure from "./components/crud_banners/BannerFailure";
+import BannerUpdateSuccess from "./components/crud_banners/BannerUpdateSuccess";
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
-  const [showStatisticsModal, setShowStatisticsModal] = useState(false);
-  const [showFilterModal, setShowFilterModal] = useState(false);
-  const [filter, setFilter] = useState("");
+  // useStates
 
-  const modalHandler = (filter, statistics) => {
-    setShowModal(true); // Always show the main Modal container
-
-    if (filter) {
-      setShowFilterModal(true); // Show the filter modal
-    } else {
-      setShowFilterModal(false); // Hide the filter modal
-    }
-
-    if (statistics) {
-      setShowStatisticsModal(true); // Show the statistics modal
-    } else {
-      setShowStatisticsModal(false); // Hide the statistics modal
-    }
-  };
+  // Banners
+  const [bannerType, setBannerType] = useState(""); // success, failure, updateSuccess
+  const [bannerMessage, setBannerMessage] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [itemCreationSuccess, setItemCreationSuccess] = useState(false);
+  const [itemCreationFailure, setItemCreationFailure] = useState(false);
+  const [itemUpdateSuccess, setItemUpdateSuccess] = useState(false);
+  const [itemUpdateFailure, setItemUpdateFailure] = useState(false);
+  const [itemSignInSuccess, setItemSignInSuccess] = useState(false);
+  const [itemSignInFailure, setItemSignInFailure] = useState(false);
+  const [itemSignOutSuccess, setItemSignOutSuccess] = useState(false);
+  const [itemSignOutFailure, setItemSignOutFailure] = useState(false);
 
   useEffect(() => {
-    console.log("filter changed");
-    console.log("filter: ", filter);
-  }, [filter]);
+    if (itemCreationSuccess) {
+      setBannerType("success");
+      setBannerMessage(
+        "Your item has been created and added to your inventory."
+      );
+    }
+    if (itemCreationFailure) {
+      setBannerType("failure");
+      setBannerMessage(
+        "There was a problem creating your item. Please try again."
+      );
+    }
+    if (itemUpdateSuccess) {
+      setBannerType("updateSuccess");
+      setBannerMessage(`${itemName} has been updated successfully.`);
+    }
+    if (itemUpdateFailure) {
+      setBannerType("failure");
+      setBannerMessage(
+        `There was a problem updating ${itemName}. Please try again.`
+      );
+    }
+    if (itemSignInSuccess) {
+      setBannerType("success");
+      setBannerMessage(`${itemName} has been signed in successfully.`);
+    }
+    if (itemSignInFailure) {
+      setBannerType("failure");
+      setBannerMessage(
+        `There was a problem signing in ${itemName}. Please try again.`
+      );
+    }
+    if (itemSignOutSuccess) {
+      setBannerType("success");
+      setBannerMessage(`${itemName} has been signed out successfully.`);
+    }
+    if (itemSignOutFailure) {
+      setBannerType("failure");
+      setBannerMessage(
+        `There was a problem signing out ${itemName}. Please try again.`
+      );
+    }
+
+    const timer = setTimeout(() => {
+      if (
+        itemCreationSuccess ||
+        itemCreationFailure ||
+        itemUpdateSuccess ||
+        itemUpdateFailure ||
+        itemSignInSuccess ||
+        itemSignInFailure ||
+        itemSignOutSuccess ||
+        itemSignOutFailure
+      ) {
+        setItemCreationSuccess(false);
+        setItemCreationFailure(false);
+        setItemUpdateSuccess(false);
+        setItemUpdateFailure(false);
+        setItemSignInSuccess(false);
+        setItemSignInFailure(false);
+        setItemSignOutSuccess(false);
+        setItemSignOutFailure(false);
+        setBannerType("");
+        setBannerMessage("");
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [
+    itemCreationSuccess,
+    itemCreationFailure,
+    itemUpdateSuccess,
+    itemUpdateFailure,
+    itemSignInSuccess,
+    itemSignInFailure,
+    itemSignOutSuccess,
+    itemSignOutFailure,
+    itemName,
+  ]);
 
   return (
     <div className="bg-slate-100 min-h-screen ">
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <InventoryPage
-              setShowModal={setShowModal}
-              categoryFilter={filter}
-              modalHandler={modalHandler}
-            />
-          }
-        />
-        <Route path="/add-item" element={<AddItem />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/check-in" element={<CheckIn />} />
-        <Route path="/logs" element={<LogsTwo />} />
-        <Route path="/inventory/:id" element={<SingleItemInfo />} />
-        <Route path="/inventory/:barcode" element={<SingleBarcode />} />
-        <Route path="/item-management" element={<ItemManagement />} />
-        <Route
-          path="/item-creation-successful"
-          element={<ItemCreationSuccessful />}
-        />
-        <Route
-          path="/item-creation-failure"
-          element={<ItemCreationFailure />}
-        />
-      </Routes>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          {showFilterModal && (
-            <FilterModal
-              setFilter={setFilter}
-              filter={filter}
-              onClose={() => {
-                setShowFilterModal(false);
-                setShowModal(false);
-              }}
-            />
-          )}
-          {showStatisticsModal && (
-            <StatisticsModal onClose={() => {
-              setShowStatisticsModal(false)
-              setShowModal(false)
-            }} />
-          )}
-        </Modal>
-      )}
+      <div className="relative w-full">
+        {/* Display banners for appropriate CRUD operation */}
+        {bannerMessage && <Banner message={bannerMessage} type={bannerType} />}
+
+        <Routes>
+          <Route path="/" element={<InventoryPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/check-in" element={<CheckIn />} />
+          <Route path="/add-item" element={<AddItem setItemCreationSuccess={setItemCreationSuccess} setItemCreationFailure={setItemCreationFailure}/>} />
+          <Route path="/logs" element={<LogsTwo />} />
+          <Route path="/inventory/:id" element={<SingleItemInfo />} />
+          <Route
+            path="/inventory/:id/edit"
+            element={
+              <EditItem
+                setItemName={setItemName}
+                setItemUpdateSuccess={setItemUpdateSuccess}
+                setItemUpdateFailure={setItemUpdateFailure}
+              />
+            }
+          />
+          <Route path="/item-management" element={<ItemManagement />} />
+        </Routes>
+      </div>
     </div>
   );
 }
