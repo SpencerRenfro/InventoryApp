@@ -5,7 +5,7 @@ import { useBarcodeGenerator } from "../hooks/useBarcodeGenerator";
 import { useNavigate } from "react-router-dom";
 import deleteIcon from "../assets/icons/delete.svg";
 
-export default function AddItem() {
+export default function AddItem({setItemCreationSuccess, setItemCreationFailure}) {
   const [customCategory, setCustomCategory] = useState(false);
   const [tempItem, setTempItem] = useState("");
   const [barcodeState, setBarcodeState] = useState();
@@ -151,7 +151,11 @@ export default function AddItem() {
       console.log("Category Error:", categoryError);
     }
     if (inventoryData && logsData) {
-      navigate("/item-creation-successful");
+      // navigate("/item-creation-successful");
+      navigate("/");
+      setItemCreationSuccess(true);
+    } else if (inventoryError || logsError) {
+      setItemCreationFailure(true);
     }
     if (logsError || inventoryError) {
       console.log("Error creating item.");

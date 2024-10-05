@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-//hooks
-import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
-//Barcode
-import BarcodeGenerator from "./BarcodeGenerator";
+//custom-hooks
+import { useFetch } from "../hooks/useFetch";
+//components
+import BarcodeGenerator from "../components/BarcodeGenerator";
 //images
 import deleteIcon from "../assets/icons/delete.svg";
 import editIcon from "../assets/icons/edit2.svg";
 
-function SingleItemData() {
+export default function EditItem({setItemUpdateFailure, setItemUpdateSuccess, setItemName}) {
   const navigate = useNavigate();
   const { id } = useParams();
   const url = `http://localhost:8000/inventory/${id}`;
@@ -46,8 +46,10 @@ function SingleItemData() {
 
   useEffect(() => {
     if (putDataResponse) {
-      navigate("/item-creation-successful");
-    }
+        navigate("/");
+        setItemUpdateSuccess(true);
+        setItemName(name);
+      } 
   }, [putDataResponse]);
 
   const deleteCollectionItem = (index) => {
@@ -98,7 +100,9 @@ function SingleItemData() {
   return (
     <div className="flex justify-center">
       {error && <div className="error">{error}</div>}
-      {isPending &&  <span className="loading loading-spinner loading-lg"></span>}
+      {isPending && (
+        <span className="loading loading-spinner loading-lg"></span>
+      )}
       {putIsPending ? (
         <span className="loading loading-spinner loading-lg"></span>
       ) : (
@@ -187,7 +191,7 @@ function SingleItemData() {
                     className="btn btn-outline mt-6 flex "
                     disabled={putIsPending}
                   >
-                  Update Item
+                    Update Item
                   </button>
                 </div>
               </div>
@@ -201,5 +205,3 @@ function SingleItemData() {
     </div>
   );
 }
-
-export default SingleItemData;
