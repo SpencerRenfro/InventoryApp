@@ -42,6 +42,186 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
+    },
+    {
+      "id": "c897",
+      "date": "07/08/2024",
+      "name": "TowTruck",
+      "category": "Transport",
+      "price": 20,
+      "serialNumber": "VIN:8675309",
+      "description": "Diesel Tow Truck",
+      "barcode": "756663036678",
+      "barcodeCombinedName": "756663036678_TowTruck",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "fe27",
+      "date": "07/11/2024",
+      "name": "Socket Wrench",
+      "category": "Tools",
+      "price": 30,
+      "serialNumber": "N/A",
+      "description": "",
+      "barcode": "030189894638",
+      "barcodeCombinedName": "030189894638_Socket Wrench",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "ef02",
+      "date": "07/11/2024",
+      "name": "PLayStation 5",
+      "category": "Electronics",
+      "price": 500,
+      "serialNumber": "3000902",
+      "description": "",
+      "barcode": "793423873495",
+      "barcodeCombinedName": "793423873495_PLayStation 5",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "7bd3",
+      "date": "07/11/2024",
+      "name": "Biology for DUMMIES",
+      "category": "Education",
+      "price": 100,
+      "serialNumber": "3443243243",
+      "description": "Book",
+      "barcode": "868090635148",
+      "barcodeCombinedName": "868090635148_Biology for DUMMIES",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "2969",
+      "date": "07/11/2024",
+      "name": "Nintendo 64",
+      "category": "Electronics",
+      "price": 100,
+      "serialNumber": "23135432",
+      "description": "",
+      "barcode": "175026044034",
+      "barcodeCombinedName": "175026044034_Nintendo 64",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "853c",
+      "date": "07/11/2024",
+      "name": "Screw Driver",
+      "category": "Tools",
+      "price": 20,
+      "serialNumber": "321321",
+      "description": "",
+      "barcode": "694483607696",
+      "barcodeCombinedName": "694483607696_Screw Driver",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "aabe",
+      "date": "07/11/2024",
+      "name": "ps4 Controller",
+      "category": "Electronics",
+      "price": 50,
+      "serialNumber": "43243243",
+      "description": "",
+      "barcode": "370559391260",
+      "barcodeCombinedName": "370559391260_ps4 Controller",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "5ce6",
+      "date": "07/13/2024",
+      "name": "Meepo Board ",
+      "category": "Electronics",
+      "price": 500,
+      "serialNumber": "342432",
+      "description": "Electric long board",
+      "barcode": "510069796038",
+      "barcodeCombinedName": "510069796038_Meepo Board ",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "20ec",
+      "date": "07/13/2024",
+      "name": "Ore",
+      "category": "Raw Materials",
+      "price": 400,
+      "serialNumber": "331432",
+      "description": "400 lbs",
+      "barcode": "952757878824",
+      "barcodeCombinedName": "952757878824_Ore",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "8ab2",
+      "date": "07/13/2024",
+      "name": "Grass",
+      "category": "Organic Materials",
+      "price": 0,
+      "serialNumber": "N/A",
+      "description": "organic grass",
+      "barcode": "943969238701",
+      "barcodeCombinedName": "943969238701_Grass",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "7d16",
+      "date": "07/13/2024",
+      "name": "Radio",
+      "category": "Electronics",
+      "price": 20,
+      "serialNumber": "N/A",
+      "description": "",
+      "barcode": "691500691878",
+      "barcodeCombinedName": "691500691878_Radio",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
+    },
+    {
+      "id": "d0bd",
+      "date": "07/16/2024",
+      "name": "Fountain pen",
+      "category": "Pens",
+      "price": 100,
+      "serialNumber": "0050520",
+      "description": "Fountain pen with feather",
+      "barcode": "239846860540",
+      "barcodeCombinedName": "239846860540_Fountain pen",
+      "itemCollection": [],
+      "barcodeUrl": "",
+      "qrCode": "",
+      "status": "IN"
     }
   ],
   "categories": [
@@ -70,164 +250,207 @@
       "name": "Other"
     },
     {
-      "id": "f5ad",
-      "name": "",
-      "barcode": "023578846982",
-      "barcodeCombinedName": "023578846982_Xbox"
-    }
-  ],
-  "itemLogs": [
-    {
-      "id": "",
-      "name": "",
-      "actiion": ""
+      "id": "4c46",
+      "name": "Electronics",
+      "barcode": "952757878824",
+      "barcodeCombinedName": "952757878824_Ore"
     },
     {
-      "id": "640920147580_LeMillion",
-      "name": "LeMillion",
+      "id": "63c1",
+      "name": "Organic Materials",
+      "barcode": "943969238701",
+      "barcodeCombinedName": "943969238701_Grass"
+    },
+    {
+      "id": "b33b",
+      "name": "Pens",
+      "barcode": "239846860540",
+      "barcodeCombinedName": "239846860540_Fountain pen"
+    }
+  ],
+"itemLogs": [
+    {
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
       "action": "CREATED",
-      "date": "06/25/2024, 03:51:56 AM",
+      "date": "06/25/2024",
       "barcode": "079498404880"
     },
     {
-      "id": "094861889307_zxz",
-      "name": "zxz",
-      "action": "CREATED",
-      "date": "06/25/2024, 03:57:23 AM",
-      "barcode": "429234399834"
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404882"
     },
     {
-      "id": "915744922489_sdsd",
-      "name": "sdsd",
-      "action": "CREATED",
-      "date": "06/25/2024, 03:57:54 AM",
-      "barcode": "905993058027"
+      "id": "4a1f_Beats",
+      "name": "Beats By Dr. Dre",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404883"
     },
     {
-      "id": "976494752560_22",
-      "name": "22",
+      "id": "60de_Drill",
+      "name": "Impact Drill",
       "action": "CREATED",
-      "date": "06/25/2024, 08:14:03 PM",
-      "barcode": "125027356963"
+      "date": "06/25/2024",
+      "barcode": "079498404884"
     },
     {
-      "id": "141211344783_dsf",
-      "name": "dsf",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:25:58 PM",
-      "barcode": "355256877181"
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404885"
     },
     {
-      "id": "859042018329_sad",
-      "name": "sad",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:27:50 PM",
-      "barcode": "455781954672"
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404886"
     },
     {
-      "id": "859042018329_sad",
-      "name": "sad",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:27:50 PM",
-      "barcode": "455781954672"
+      "id": "60de_Drill",
+      "name": "Impact Drill",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404887"
     },
     {
-      "id": "832301955511_1",
-      "name": "1",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:28:17 PM",
-      "barcode": "113575930695"
-    },
-    {
-      "id": "832301955511_1",
-      "name": "1",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:28:17 PM",
-      "barcode": "113575930695"
-    },
-    {
-      "id": "800078660405_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/25/2024, 08:28:46 PM",
-      "barcode": "291114960621"
-    },
-    {
-      "id": "717025016142_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/26/2024, 12:26:43 AM",
-      "barcode": "049297539749"
-    },
-    {
-      "id": "940601228299_Book",
-      "name": "Book",
-      "action": "CREATED",
-      "date": "06/26/2024, 01:44:25 AM",
-      "barcode": "775814306493"
-    },
-    {
-      "id": "313218982460_Xbox",
+      "id": "2bdc_Xbox",
       "name": "Xbox",
       "action": "CREATED",
-      "date": "06/26/2024, 05:49:33 PM",
-      "barcode": "000795891431"
+      "date": "06/25/2024",
+      "barcode": "079498404888"
     },
     {
-      "id": "484484737988_pen",
-      "name": "pen",
-      "action": "CREATED",
-      "date": "06/27/2024, 12:14:21 AM",
-      "barcode": "010550075893"
-    },
-    {
-      "id": "614781573155_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:37:33 AM",
-      "barcode": "185018614172"
-    },
-    {
-      "id": "462685916565_coffe cup",
-      "name": "coffe cup",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:39:16 AM",
-      "barcode": "268580706861"
-    },
-    {
-      "id": "763802759488_new coffe cup",
-      "name": "new coffe cup",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:41:42 AM",
-      "barcode": "014243190796"
-    },
-    {
-      "id": "308648593802_1",
-      "name": "1",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:43:14 AM",
-      "barcode": "339329754478"
-    },
-    {
-      "id": "455284338073_ds",
-      "name": "ds",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:44:06 AM",
-      "barcode": "328082810911"
-    },
-    {
-      "id": "059479987737_tea cup",
-      "name": "tea cup",
-      "action": "CREATED",
-      "date": "06/27/2024, 03:44:40 AM",
-      "barcode": "740544620564"
-    },
-    {
-      "id": "184911347473_Xbox",
+      "id": "2bdc_Xbox",
       "name": "Xbox",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404889"
+    },
+    {
+      "id": "2bdc_Xbox",
+      "name": "Xbox",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404890"
+    },
+    {
+      "id": "2bdc_Xbox",
+      "name": "Xbox",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404891"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
       "action": "CREATED",
-      "date": "06/28/2024, 11:35:39 AM",
-      "barcode": "023578846982"
+      "date": "06/25/2024",
+      "barcode": "079498404892"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "IN",
+      "date": "06/26/2024",
+      "barcode": "079498404893"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "OUT",
+      "date": "06/27/2024",
+      "barcode": "079498404894"
+    },
+    {
+      "id": "c897_TowTruck",
+      "name": "TowTruck",
+      "action": "DELETED",
+      "date": "06/28/2024",
+      "barcode": "079498404895"
+    },
+    {
+      "id": "264247637115_Socket Wrench",
+      "name": "Socket Wrench",
+      "action": "CREATED",
+      "date": "07/11/2024",
+      "barcode": "030189894638"
+    },
+    {
+      "id": "667813666430_PLayStation 5",
+      "name": "PLayStation 5",
+      "action": "CREATED",
+      "date": "07/11/2024",
+      "barcode": "793423873495"
+    },
+    {
+      "id": "567560567822_Biology for DUMMIES",
+      "name": "Biology for DUMMIES",
+      "action": "CREATED",
+      "date": "07/11/2024",
+      "barcode": "868090635148"
+    },
+    {
+      "id": "930725238709_Nintendo 64",
+      "name": "Nintendo 64",
+      "action": "CREATED",
+      "date": "07/11/2024",
+      "barcode": "175026044034"
+    },
+    {
+      "id": "925022869793_Screw Driver",
+      "name": "Screw Driver",
+      "action": "CREATED",
+      "date": "07/11/2024",
+      "barcode": "694483607696"
+    },
+    {
+      "id": "940007881716_ps4 Controller",
+      "name": "ps4 Controller",
+      "action": "CREATED",
+      "date": "07/11/2024",
+      "barcode": "370559391260"
+    },
+    {
+      "id": "510069796038_Meepo Board ",
+      "name": "Meepo Board ",
+      "action": "CREATED",
+      "date": "07/13/2024",
+      "barcode": "510069796038"
+    },
+    {
+      "id": "952757878824_Ore",
+      "name": "Ore",
+      "action": "CREATED",
+      "date": "07/13/2024",
+      "barcode": "952757878824"
+    },
+    {
+      "id": "943969238701_Grass",
+      "name": "Grass",
+      "action": "CREATED",
+      "date": "07/13/2024",
+      "barcode": "943969238701"
+    },
+    {
+      "id": "691500691878_Radio",
+      "name": "Radio",
+      "action": "CREATED",
+      "date": "07/13/2024",
+      "barcode": "691500691878"
+    },
+    {
+      "id": "239846860540_Fountain pen",
+      "name": "Fountain pen",
+      "action": "CREATED",
+      "date": "07/16/2024",
+      "barcode": "239846860540"
     }
   ]
+
 }

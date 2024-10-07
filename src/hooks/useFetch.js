@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 export const useFetch = (url, method = "GET") => {
-  const [data, setData] = useState(null)
-  const [isPending, setIsPending] = useState(false)
-  const [error, setError] = useState(null)
-  // for post request
-  const [options, setOptions] = useState(null)
+  const [data, setData] = useState(null);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(null);
+  const [options, setOptions] = useState(null);
 
   const postData = (postData) => {
     setOptions({
@@ -14,56 +13,57 @@ export const useFetch = (url, method = "GET") => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(postData),
-    })
-  }
-  useEffect(() => {
-    console.log(`
-      useFetch ran with url: ${url}
-      method: ${method}
-      options: ${JSON.stringify(options)}
-      `);
+    });
+  };
 
-    const controller = new AbortController()
+  const putData = (putData) => {
+    setOptions({
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(putData),
+    });
+  };
+
+  useEffect(() => {
+    console.log(`useFetch ran with url: ${url}, method: ${method}, options: ${JSON.stringify(options)}`);
+
+    const controller = new AbortController();
 
     const fetchData = async (fetchOptions) => {
-      setIsPending(true)
+      setIsPending(true);
 
       try {
-        const res = await fetch(url, { ...fetchOptions, signal: controller.signal })
-        if(!res.ok) {
-          throw new Error(res.statusText)
+        const res = await fetch(url, { ...fetchOptions, signal: controller.signal });
+        if (!res.ok) {
+          throw new Error(res.statusText);
         }
-        const data = await res.json()
+        const data = await res.json();
 
-        setIsPending(false)
-        console.log('data', data);
-        setData(data)
-        setError(null)
+        setIsPending(false);
+        setData(data);
+        setError(null);
       } catch (err) {
         if (err.name === "AbortError") {
-          console.log("the fetch was aborted")
+          console.log("The fetch was aborted");
         } else {
-          setIsPending(false)
-          setError('Could not fetch the data')
+          setIsPending(false);
+          setError("Could not fetch the data");
         }
       }
-    }
+    };
 
     if (method === "GET") {
-      fetchData()
-
+      fetchData();
+    } else if ((method === "POST" || method === "PUT") && options) {
+      fetchData(options);
     }
-    if (method === "POST" && options) {
-      fetchData(options)
-    }
-
-
 
     return () => {
-      controller.abort()
-    }
+      controller.abort();
+    };
+  }, [url, options, method]);
 
-  }, [url, options, method])
-
-  return { data, isPending, error, postData }
-}
+  return { data, isPending, error, postData, putData };
+};
