@@ -120,6 +120,8 @@ export default function AddItem({setItemCreationSuccess, setItemCreationFailure}
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
+      minute: "2-digit",
+      hour12: false, // Change to `true` if you want 12-hour format
     });
     setFormData((prevFormData) => ({
       ...prevFormData,

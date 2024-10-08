@@ -32,7 +32,7 @@ function Table({ logs, filter }) {
                     {item.action}
                   </div>
                 </td>
-                <td className="w-1/4"> 
+                <td className="w-1/4">
                   <p>{item.date}</p>
                 </td>
               </tr>

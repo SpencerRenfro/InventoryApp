@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Searchbar() {
-  const [term, setTerm] = useState("");
+export default function Searchbar({ inventoryItems, setTerm, setFilteredItems, term }) {
+  useEffect(() => {
+    if (!inventoryItems.length) {
+      console.log("No inventory items available yet.");
+      return;
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("searchbar submited");
-  };
+    console.log("Search term:", term);
+
+    const lowerCaseTerm = term ? term.toLowerCase() : ""; // Safeguard for term
+
+    const results = inventoryItems.filter((item) => {
+      const itemName = item.name ? item.name.toLowerCase() : "";
+      const itemId = item.id ? item.id.toString() : "";
+
+      return itemName.includes(lowerCaseTerm) || itemId.includes(lowerCaseTerm);
+    });
+
+    setFilteredItems(results); // Update filtered items for display
+    console.log("Filtered items:", results);
+  }, [term, inventoryItems, setFilteredItems]); // Effect runs when term or inventoryItems updates
 
   return (
     <div className="">
-      <form onSubmit={handleSubmit} className="flex">
+      <div className="flex">
         <div className="relative w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,11 +51,11 @@ export default function Searchbar() {
             className="w-full rounded text-xl py-4 pl-11"
             type="text"
             id="search"
-            onChange={(e) => setTerm(e.target.value)}
+            onChange={(e) => setTerm(e.target.value)} // Update term
             placeholder="Search"
           />
         </div>
-      </form>
+      </div>
     </div>
   );
 }

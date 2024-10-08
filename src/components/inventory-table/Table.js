@@ -6,13 +6,13 @@ import next from "../../assets/icons/next.svg"; // Ensure this path is correct
 // Components
 import TableHead from "./TableHead";
 
-export default function Table({ inventoryItems, categoryFilter }) {
+export default function Table({ categoryFilter, filteredItems }) {
   return (
     <div>
       <table className="table min-w-full text-black">
         <TableHead />
         <tbody>
-          {inventoryItems.map((item) =>
+          {filteredItems.map((item) =>
             categoryFilter === "" ||
             item.category === categoryFilter ||
             item.status === categoryFilter ? (
@@ -58,13 +58,10 @@ export default function Table({ inventoryItems, categoryFilter }) {
                         className="rotate-90"
                       />
                       <span className="ml-2">Options</span>{" "}
-                      {/* Optional label next to the image */}
                     </summary>
                     <ul className="menu dropdown-content bg-base-100 rounded-box z-50 w-52 p-2 shadow">
                       <li>
-                        <NavLink to={`/inventory/${item.id}/edit`}>
-                          Edit
-                        </NavLink>
+                        <NavLink to={`/inventory/${item.id}/edit`}>Edit</NavLink>
                       </li>
                       <li>Sign In</li>
                       <li>Sign Out</li>

@@ -23,6 +23,10 @@ export default function Inventory({ inventoryItems, categoryItems }) {
   // "" is the default value for no filter
   const [filter, setFilter] = useState("");
 
+  //searchbar useStates
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [term, setTerm] = useState("");
+
   // Helper function to update counts and total price
   const updateCounts = (item, counters) => {
     if (!isNaN(parseFloat(item.price))) {
@@ -80,7 +84,7 @@ export default function Inventory({ inventoryItems, categoryItems }) {
       </div>
       <div className="grid grid-cols-12 mx-40 mt-10">
         <div className="col-span-7 mr-10">
-          <Searchbar />
+          <Searchbar inventoryItems={inventoryItems} setTerm={setTerm} term={term} setFilteredItems={setFilteredItems} />
         </div>
         <FilterInventory
           filter={filter}
@@ -96,7 +100,12 @@ export default function Inventory({ inventoryItems, categoryItems }) {
           </div>
         </div>
         <div className="col-span-12">
-          <Table inventoryItems={inventoryItems} categoryFilter={filter} />
+          <Table
+            inventoryItems={inventoryItems}
+            categoryFilter={filter}
+            term={term}
+            filteredItems={filteredItems}
+          />
           <Pagination />
         </div>
       </div>

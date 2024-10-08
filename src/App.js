@@ -23,6 +23,7 @@ import BannerUpdateSuccess from "./components/crud_banners/BannerUpdateSuccess";
 function App() {
   // useStates
 
+
   // Banners
   const [bannerType, setBannerType] = useState(""); // success, failure, updateSuccess
   const [bannerMessage, setBannerMessage] = useState("");
