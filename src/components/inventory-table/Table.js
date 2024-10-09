@@ -64,7 +64,7 @@ export default function Table({ categoryFilter, filteredItems }) {
                         <NavLink to={`/inventory/${item.id}/edit`}>Edit</NavLink>
                       </li>
                       <li>Sign In</li>
-                      <li>Sign Out</li>
+                      <NavLink to={`/${item.id}/sign-out`}>Sign Out</NavLink>
                     </ul>
                   </details>
                 </td>

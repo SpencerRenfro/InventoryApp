@@ -13,8 +13,9 @@ export default function Searchbar({ inventoryItems, setTerm, setFilteredItems, t
 
     const results = inventoryItems.filter((item) => {
       const itemName = item.name ? item.name.toLowerCase() : "";
-      const itemId = item.id ? item.id.toString() : "";
-
+      const itemId = item.barcode ? item.barcode.toString() : "";
+      console.log('itemName:', itemName);
+      console.log('itemId:', itemId);
       return itemName.includes(lowerCaseTerm) || itemId.includes(lowerCaseTerm);
     });
 

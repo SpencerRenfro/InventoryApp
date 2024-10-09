@@ -44,18 +44,17 @@ function SingleItemData() {
     }
   }, [item]);
 
-
-
   return (
     <div className="flex justify-center">
       {error && <div className="error">{error}</div>}
-      {isPending &&  <span className="loading loading-spinner loading-lg"></span>}
-      {   item && (
+      {isPending && (
+        <span className="loading loading-spinner loading-lg"></span>
+      )}
+      {item && (
         <div>
-        <BarcodeGenerator barcodeState={barcodeState} />
+          <BarcodeGenerator barcodeState={barcodeState} />
         </div>
-        )
-      }
+      )}
     </div>
   );
 }

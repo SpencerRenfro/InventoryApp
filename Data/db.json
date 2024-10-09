@@ -3,7 +3,7 @@
     {
       "id": "4a1f",
       "date": "06/28/2024, 11:35:39 AM",
-      "name": "JBL_Stereo?",
+      "name": "JBL_Stereo",
       "category": "Electronics",
       "price": 150,
       "serialNumber": "N/A",
@@ -378,36 +378,6 @@
       "barcodeUrl": "",
       "qrCode": "",
       "status": "IN"
-    },
-    {
-      "id": "029a",
-      "date": "10/05/2024",
-      "name": "hjgkjh",
-      "category": "",
-      "price": 200,
-      "serialNumber": "345",
-      "description": "",
-      "barcode": "406879366941",
-      "barcodeCombinedName": "406879366941_hjgkjh",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
-    },
-    {
-      "id": "4020",
-      "date": "10/07/2024, 49",
-      "name": "newItem",
-      "category": "",
-      "price": 213,
-      "serialNumber": "n/a",
-      "description": "",
-      "barcode": "563568887214",
-      "barcodeCombinedName": "563568887214_newItem",
-      "itemCollection": [],
-      "barcodeUrl": "",
-      "qrCode": "",
-      "status": "IN"
     }
   ],
   "categories": [
@@ -699,20 +669,6 @@
       "action": "CREATED",
       "date": "10/03/2024",
       "barcode": "469210057564"
-    },
-    {
-      "id": "406879366941_hjgkjh",
-      "name": "hjgkjh",
-      "action": "CREATED",
-      "date": "10/05/2024",
-      "barcode": "406879366941"
-    },
-    {
-      "id": "563568887214_newItem",
-      "name": "newItem",
-      "action": "CREATED",
-      "date": "10/07/2024, 49",
-      "barcode": "563568887214"
     }
   ]
 }

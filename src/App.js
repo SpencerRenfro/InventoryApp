@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Pages
 import EditItem from "./pages/EditItem";
@@ -11,18 +11,17 @@ import SingleItemInfo from "./pages/ItemInfo";
 // import ItemCreationFailure from "./pages/crud_pages/ItemCreationFailure";
 import ItemManagement from "./pages/ItemManagement";
 import LogsTwo from "./components/logs/Logs";
+import SignOut from "./pages/SignOut";
 
 // Components
 import Navbar from "./ui/Navbar";
 import Banner from "./components/Banner";
 // Banner Components
-import BannerSuccess from "./components/crud_banners/BannerSuccess";
-import BannerFailure from "./components/crud_banners/BannerFailure";
-import BannerUpdateSuccess from "./components/crud_banners/BannerUpdateSuccess";
 
 function App() {
-  // useStates
-
+  // hide navbar for signout page
+  const location = useLocation();
+  const hideNavbar = location.pathname.includes("/sign-out");
 
   // Banners
   const [bannerType, setBannerType] = useState(""); // success, failure, updateSuccess
@@ -120,7 +119,7 @@ function App() {
 
   return (
     <div className="bg-slate-100 min-h-screen ">
-      <Navbar />
+      {!hideNavbar && <Navbar />}
       <div className="relative w-full">
         {/* Display banners for appropriate CRUD operation */}
         {bannerMessage && <Banner message={bannerMessage} type={bannerType} />}
@@ -129,7 +128,15 @@ function App() {
           <Route path="/" element={<InventoryPage />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/check-in" element={<CheckIn />} />
-          <Route path="/add-item" element={<AddItem setItemCreationSuccess={setItemCreationSuccess} setItemCreationFailure={setItemCreationFailure}/>} />
+          <Route
+            path="/add-item"
+            element={
+              <AddItem
+                setItemCreationSuccess={setItemCreationSuccess}
+                setItemCreationFailure={setItemCreationFailure}
+              />
+            }
+          />
           <Route path="/logs" element={<LogsTwo />} />
           <Route path="/inventory/:id" element={<SingleItemInfo />} />
           <Route
@@ -142,6 +149,7 @@ function App() {
               />
             }
           />
+          <Route path="/:id/sign-out" element={<SignOut />} />
           <Route path="/item-management" element={<ItemManagement />} />
         </Routes>
       </div>
